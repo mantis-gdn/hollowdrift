@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hollow Drift — I Am the Signal</title>
+  <meta name="description" content="Hollow Drift — I Am the Signal. Watch, listen, and follow the transmission." />
+  <meta property="og:title" content="Hollow Drift — I Am the Signal" />
+  <meta property="og:description" content="Watch, listen, and follow the transmission." />
+  <!-- Replace with your share image -->
+  <!-- <meta property="og:image" content="https://hollowdrift.com/og.jpg" /> -->
+  <meta name="theme-color" content="#0b0b0f" />
+  <style>
+    :root{
+      --bg:#07070a;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.09);
+      --text:#f2f2f5;
+      --muted:rgba(242,242,245,.72);
+      --line:rgba(255,255,255,.12);
+      --accent:#f7c948; /* tweak to your gold */
+      --shadow: 0 20px 70px rgba(0,0,0,.55);
+      --radius: 22px;
+      --max: 920px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(247,201,72,.10), transparent 55%),
+        radial-gradient(1000px 600px at 85% 30%, rgba(140, 92, 255,.10), transparent 55%),
+        radial-gradient(900px 650px at 50% 95%, rgba(0, 255, 200,.06), transparent 60%),
+        var(--bg);
+      overflow-x:hidden;
+    }
+
+    .noise{
+      pointer-events:none;
+      position:fixed; inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+      opacity:.22;
+      mix-blend-mode:overlay;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:28px 18px 64px;
+    }
+
+    .card{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, var(--panel), rgba(255,255,255,.03));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    header{
+      padding:28px 22px 18px;
+      display:flex; gap:18px; align-items:center;
+    }
+
+    .logo{
+      width:78px; height:78px;
+      border-radius:18px;
+      background:linear-gradient(135deg, rgba(247,201,72,.18), rgba(140,92,255,.10));
+      border:1px solid rgba(255,255,255,.14);
+      display:grid; place-items:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .logo img{width:100%; height:100%; object-fit:cover}
+
+    h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing:.4px;
+      line-height:1.1;
+    }
+    .tag{
+      margin-top:6px;
+      font-family:var(--mono);
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .pitch{
+      padding:0 22px 18px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.55;
+      max-width:70ch;
+    }
+
+    .ctaRow{
+      padding:0 22px 22px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .btn{
+      text-decoration:none;
+      color:var(--text);
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      display:flex; justify-content:space-between; align-items:center;
+      transition:transform .08s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.09); border-color:rgba(247,201,72,.35)}
+    .btn strong{font-size:14px}
+    .btn span{font-family:var(--mono); color:var(--muted); font-size:12px}
+
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(247,201,72,.20), rgba(247,201,72,.06));
+      border-color:rgba(247,201,72,.35);
+    }
+
+    .links{
+      padding:18px 22px 22px;
+      border-top:1px solid var(--line);
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+
+    .mini{
+      padding:16px 22px 22px;
+      border-top:1px solid var(--line);
+      display:grid;
+      gap:10px;
+    }
+
+    .embed{
+      aspect-ratio:16/9;
+      width:100%;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      overflow:hidden;
+      background:rgba(0,0,0,.35);
+    }
+    .embed iframe{width:100%; height:100%; border:0}
+
+    footer{
+      padding:16px 22px 22px;
+      border-top:1px solid var(--line);
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:space-between;
+      align-items:center;
+      color:var(--muted);
+      font-size:12px;
+    }
+    footer .motto{font-family:var(--mono)}
+    @media (max-width:640px){
+      .ctaRow{grid-template-columns:1fr}
+      header{align-items:flex-start}
+      .logo{width:64px; height:64px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="noise"></div>
+
+  <main class="wrap">
+    <div class="card">
+      <header>
+        <div class="logo">
+          <!-- Replace with your flame logo path -->
+          <!-- If you don't have it hosted yet, drop a placeholder or inline SVG -->
+          <img src="flame-logo.png" alt="Hollow Drift flame" onerror="this.style.display='none'">
+        </div>
+        <div>
+          <h1>Hollow Drift</h1>
+          <div class="tag">I Am the Signal.</div>
+        </div>
+      </header>
+
+      <div class="pitch">
+        Industrial / glitch / groove metal transmissions. Built for the room, not the recording.
+        If you feel it before you understand it, the signal worked.
+      </div>
+
+      <section class="ctaRow">
+        <a class="btn primary" href="https://youtube.com/" target="_blank" rel="noopener">
+          <strong>Watch on YouTube</strong><span>primary</span>
+        </a>
+        <a class="btn" href="https://bandcamp.com/" target="_blank" rel="noopener">
+          <strong>Listen on Bandcamp</strong><span>support</span>
+        </a>
+      </section>
+
+      <section class="links" aria-label="Links">
+        <a class="btn" href="https://suno.com/" target="_blank" rel="noopener">
+          <strong>Suno</strong><span>exclusive drops</span>
+        </a>
+        <a class="btn" href="https://youtube.com/" target="_blank" rel="noopener">
+          <strong>YouTube Shorts</strong><span>clips</span>
+        </a>
+        <a class="btn" href="https://instagram.com/" target="_blank" rel="noopener">
+          <strong>Instagram</strong><span>visuals</span>
+        </a>
+        <a class="btn" href="mailto:mantis@hollowdrift.com">
+          <strong>Contact / Booking</strong><span>email</span>
+        </a>
+      </section>
+
+      <section class="mini">
+        <div class="tag">Latest transmission</div>
+        <div class="embed">
+          <!-- Replace VIDEO_ID -->
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="Hollow Drift — Latest"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
+      <footer>
+        <div>© <span id="y"></span> Hollow Drift</div>
+        <div class="motto">Built for the room. Not the recording.</div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

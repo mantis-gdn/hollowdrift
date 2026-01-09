@@ -1,0 +1,21 @@
+{
+  "name": "hollowdrift",
+  "version": "1.0.0",
+  "description": "Hollow Drift Dot Com",
+  "homepage": "https://github.com/mantis-gdn/hollowdrift#readme",
+  "bugs": {
+    "url": "https://github.com/mantis-gdn/hollowdrift/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mantis-gdn/hollowdrift.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "dev": "npx serve ."
+  }
+}
