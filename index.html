@@ -116,6 +116,14 @@
       font-size:20px;
     }
 
+    .showAlert{
+      margin-top:16px;
+      color:var(--gold);
+      font-family:var(--mono);
+      font-size:15px;
+      letter-spacing:.04em;
+    }
+
     .pitch{
       margin-top:18px;
       max-width:720px;
@@ -203,6 +211,15 @@
       line-height:1.6;
     }
 
+    .soundcloudEmbed{
+      width:100%;
+      height:360px;
+      border:0;
+      border-radius:14px;
+      overflow:hidden;
+      background:#000;
+    }
+
     .embed{
       width:100%;
       aspect-ratio:16/9;
@@ -256,6 +273,10 @@
       .pitch{
         font-size:18px;
       }
+
+      .soundcloudEmbed{
+        height:420px;
+      }
     }
   </style>
 </head>
@@ -277,6 +298,10 @@
 
           <div class="tag">
             I Am the Signal.
+          </div>
+
+          <div class="showAlert">
+            LIVE • AUGUST 27, 2026 • THE INDUSTRIAL • PAWTUCKET, RI
           </div>
 
           <div class="pitch">
@@ -307,12 +332,12 @@
 
         <a
           class="btn"
-          href="https://soundcloud.com/hollow-drift"
+          href="https://soundcloud.com/hollow-drift/sets/the-first-transmission"
           target="_blank"
           rel="noopener"
         >
           <div>
-            <strong>Listen on SoundCloud</strong>
+            <strong>Open Playlist</strong>
             <span>The First Transmission</span>
           </div>
 
@@ -410,6 +435,24 @@
           Show: 7:00 PM<br>
           All Ages
         </div>
+
+      </section>
+
+      <section class="mini">
+
+        <div class="miniTitle">
+          Learn The Songs
+        </div>
+
+        <iframe
+          class="soundcloudEmbed"
+          width="100%"
+          height="360"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay; encrypted-media"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2259913097&color=%23f7c948&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+        </iframe>
 
       </section>
 
