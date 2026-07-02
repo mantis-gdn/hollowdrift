@@ -4,15 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hollow Drift — I Am the Signal</title>
-  <meta name="description" content="Hollow Drift — I Am the Signal. Watch, listen, and follow the transmission." />
+
+  <meta name="description" content="Hollow Drift — Industrial groove metal, glitch transmissions, and broadcast sermons. Join The First Transmission." />
   <meta property="og:title" content="Hollow Drift — I Am the Signal" />
-  <meta property="og:description" content="Watch, listen, and follow the transmission." />
+  <meta property="og:description" content="Industrial groove metal transmissions. Join The First Transmission." />
   <meta name="theme-color" content="#07070a" />
 
   <style>
     :root{
       --bg:#050507;
-      --card:rgba(10,10,14,.9);
+      --card:rgba(10,10,14,.92);
       --text:#f4f4f6;
       --muted:rgba(244,244,246,.72);
       --line:rgba(255,255,255,.15);
@@ -24,7 +25,13 @@
       --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
 
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -39,14 +46,14 @@
       overflow-x:hidden;
     }
 
-    body:before{
+    body::before{
       content:"";
       position:fixed;
       inset:0;
       pointer-events:none;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
       opacity:.18;
       mix-blend-mode:screen;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
     }
 
     .wrap{
@@ -57,19 +64,25 @@
 
     .card{
       border:1px solid var(--line);
-      background:linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.025)), var(--card);
       border-radius:var(--radius);
-      box-shadow:0 24px 90px rgba(0,0,0,.72);
       overflow:hidden;
       backdrop-filter:blur(10px);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.07),
+          rgba(255,255,255,.025)
+        ),
+        var(--card);
+      box-shadow:0 24px 90px rgba(0,0,0,.72);
     }
 
     header{
       display:grid;
       grid-template-columns:260px 1fr;
       gap:34px;
-      padding:34px;
       align-items:center;
+      padding:34px;
     }
 
     .logo{
@@ -78,8 +91,8 @@
       border-radius:18px;
       display:grid;
       place-items:center;
-      border:1px solid rgba(247,201,72,.55);
       background:#000;
+      border:1px solid rgba(247,201,72,.55);
       overflow:hidden;
     }
 
@@ -113,36 +126,41 @@
 
     .ctaRow,
     .links{
-      padding:0 34px 24px;
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:18px;
+      padding:0 34px 24px;
     }
 
     .btn{
       min-height:72px;
-      text-decoration:none;
-      color:var(--text);
+      padding:18px 24px;
+      border-radius:14px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.045);
-      border-radius:14px;
-      padding:18px 24px;
+      color:var(--text);
+      text-decoration:none;
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
       gap:18px;
       transition:.15s ease;
     }
 
     .btn:hover{
       transform:translateY(-2px);
-      border-color:rgba(247,201,72,.65);
       background:rgba(255,255,255,.075);
+      border-color:rgba(247,201,72,.65);
     }
 
     .btn.primary{
       border-color:rgba(247,201,72,.7);
-      background:linear-gradient(135deg, rgba(247,201,72,.18), rgba(247,201,72,.035));
+      background:
+        linear-gradient(
+          135deg,
+          rgba(247,201,72,.18),
+          rgba(247,201,72,.035)
+        );
     }
 
     .btn strong{
@@ -168,21 +186,21 @@
     .mini{
       margin:0 34px 34px;
       padding:22px;
-      border:1px solid var(--line);
       border-radius:16px;
+      border:1px solid var(--line);
       background:rgba(255,255,255,.035);
     }
 
     .miniTitle{
+      margin-bottom:14px;
       color:var(--gold);
       font-family:var(--mono);
-      margin-bottom:14px;
     }
 
     .showInfo{
       color:var(--muted);
-      line-height:1.55;
       font-size:16px;
+      line-height:1.6;
     }
 
     .embed{
@@ -190,8 +208,8 @@
       aspect-ratio:16/9;
       border-radius:14px;
       overflow:hidden;
-      border:1px solid var(--line);
       background:#000;
+      border:1px solid var(--line);
     }
 
     .embed iframe{
@@ -201,12 +219,13 @@
     }
 
     footer{
-      border-top:1px solid var(--line);
       padding:22px 34px;
+      border-top:1px solid var(--line);
       display:flex;
       justify-content:space-between;
-      gap:16px;
+      align-items:center;
       flex-wrap:wrap;
+      gap:16px;
       color:var(--muted);
     }
 
@@ -215,7 +234,8 @@
       font-family:var(--mono);
     }
 
-    @media(max-width:760px){
+    @media (max-width:760px){
+
       header{
         grid-template-columns:1fr;
       }
@@ -228,115 +248,206 @@
       .links{
         grid-template-columns:1fr;
       }
+
+      h1{
+        font-size:52px;
+      }
+
+      .pitch{
+        font-size:18px;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <main class="wrap">
+
     <div class="card">
 
       <header>
+
         <div class="logo">
-          <img src="/public/hollow-drift-sigil.png" alt="Hollow Drift sigil">
+          <img src="/hollow-drift-sigil.png" alt="Hollow Drift Sigil">
         </div>
 
         <div>
           <h1>Hollow Drift</h1>
-          <div class="tag">I Am the Signal.</div>
+
+          <div class="tag">
+            I Am the Signal.
+          </div>
 
           <div class="pitch">
-            Industrial / glitch / groove metal transmissions. Built for the room,
-            not the recording. If you feel it before you understand it,
-            the signal worked.
+            Industrial groove metal. Glitch transmissions.
+            Broadcast sermons from the edge of the signal.
+            Learn the songs. Join the transmission.
+            Become part of the broadcast.
           </div>
         </div>
+
       </header>
 
       <section class="ctaRow">
-        <a class="btn primary" href="https://youtube.com/@hollowdriftmusic" target="_blank" rel="noopener">
+
+        <a
+          class="btn primary"
+          href="https://www.eventbrite.com/e/hollow-drift-presents-the-first-transmission-tickets-1992967207567"
+          target="_blank"
+          rel="noopener"
+        >
           <div>
-            <strong>Watch on YouTube</strong>
-            <span>primary</span>
+            <strong>Get Tickets</strong>
+            <span>August 27 · The Industrial</span>
           </div>
+
           <div class="arrow">→</div>
         </a>
 
-        <a class="btn" href="https://soundcloud.com/hollow-drift" target="_blank" rel="noopener">
+        <a
+          class="btn"
+          href="https://soundcloud.com/hollow-drift"
+          target="_blank"
+          rel="noopener"
+        >
           <div>
             <strong>Listen on SoundCloud</strong>
             <span>The First Transmission</span>
           </div>
+
           <div class="arrow">→</div>
         </a>
+
       </section>
 
       <section class="links">
-        <a class="btn" href="https://suno.com/@hollowdrift" target="_blank" rel="noopener">
+
+        <a
+          class="btn"
+          href="https://youtube.com/@hollowdriftmusic"
+          target="_blank"
+          rel="noopener"
+        >
           <div>
-            <strong>Suno</strong>
-            <span>exclusive drops</span>
+            <strong>YouTube</strong>
+            <span>videos & lyric videos</span>
           </div>
+
           <div class="arrow">→</div>
         </a>
 
-        <a class="btn" href="https://youtube.com/@hollowdriftmusic/shorts" target="_blank" rel="noopener">
+        <a
+          class="btn"
+          href="https://youtube.com/@hollowdriftmusic/shorts"
+          target="_blank"
+          rel="noopener"
+        >
           <div>
             <strong>YouTube Shorts</strong>
             <span>clips</span>
           </div>
+
           <div class="arrow">→</div>
         </a>
 
-        <a class="btn" href="https://instagram.com/hollowdriftmusic" target="_blank" rel="noopener">
+        <a
+          class="btn"
+          href="https://instagram.com/hollowdriftmusic"
+          target="_blank"
+          rel="noopener"
+        >
           <div>
             <strong>Instagram</strong>
             <span>visuals</span>
           </div>
+
           <div class="arrow">→</div>
         </a>
 
-        <a class="btn" href="mailto:hollowdriftmusic@gmail.com">
+        <a
+          class="btn"
+          href="https://suno.com/@hollowdrift"
+          target="_blank"
+          rel="noopener"
+        >
+          <div>
+            <strong>Suno</strong>
+            <span>exclusive drops</span>
+          </div>
+
+          <div class="arrow">→</div>
+        </a>
+
+        <a
+          class="btn"
+          href="mailto:hollowdriftmusic@gmail.com"
+        >
           <div>
             <strong>Contact / Booking</strong>
             <span>email</span>
           </div>
+
           <div class="arrow">→</div>
         </a>
+
       </section>
 
       <section class="mini">
-        <div class="miniTitle">Live transmission</div>
-        <div class="showInfo">
-          <strong>August 27, 2026 — The Industrial</strong><br>
-          Pawtucket, Rhode Island<br>
-          Doors 6:00 PM · Show 7:00 PM · All Ages
+
+        <div class="miniTitle">
+          Live Transmission
         </div>
+
+        <div class="showInfo">
+          <strong>The First Transmission</strong><br>
+          August 27, 2026<br>
+          The Industrial<br>
+          173 Coyle Avenue<br>
+          Pawtucket, RI 02861<br><br>
+
+          Doors: 6:00 PM<br>
+          Show: 7:00 PM<br>
+          All Ages
+        </div>
+
       </section>
 
       <section class="mini">
-        <div class="miniTitle">Latest transmission</div>
+
+        <div class="miniTitle">
+          Latest Transmission
+        </div>
 
         <div class="embed">
           <iframe
-            src="https://www.youtube.com/embed/ibbCnPQd_1I?si=bPrQThUIq8YZm_9w"
-            title="Hollow Drift — Latest Transmission"
+            src="https://www.youtube.com/embed/XqhX-355ioc?si=t-T2xKRzU47gBNac"
+            title="Hollow Drift Latest Transmission"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
           </iframe>
         </div>
+
       </section>
 
       <footer>
-        <div>© <span id="y"></span> Hollow Drift</div>
-        <div class="motto">Built for the room. Not the recording.</div>
+        <div>
+          © <span id="year"></span> Hollow Drift
+        </div>
+
+        <div class="motto">
+          Built for the room. Not the recording.
+        </div>
       </footer>
 
     </div>
+
   </main>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
