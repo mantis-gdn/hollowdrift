@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -25,13 +26,9 @@
       --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{ box-sizing:border-box; }
 
-    html{
-      scroll-behavior:smooth;
-    }
+    html{ scroll-behavior:smooth; }
 
     body{
       margin:0;
@@ -68,11 +65,7 @@
       overflow:hidden;
       backdrop-filter:blur(10px);
       background:
-        linear-gradient(
-          135deg,
-          rgba(255,255,255,.07),
-          rgba(255,255,255,.025)
-        ),
+        linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.025)),
         var(--card);
       box-shadow:0 24px 90px rgba(0,0,0,.72);
     }
@@ -85,6 +78,38 @@
       padding:34px;
     }
 
+    .heroHeader{
+      position:relative;
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:34px;
+      align-items:center;
+      padding:34px;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .heroBg{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(135deg, rgba(0,0,0,.86), rgba(0,0,0,.62)),
+        radial-gradient(circle at center, rgba(123,60,255,.30), transparent 62%),
+        url("/public/hollow-drift-sigil.png");
+      background-size:auto, auto, 680px;
+      background-position:center;
+      background-repeat:no-repeat;
+      opacity:.32;
+      filter:blur(2px) saturate(1.2);
+      transform:scale(1.08);
+      z-index:-1;
+    }
+
+    .heroContent{
+      position:relative;
+      z-index:2;
+    }
+
     .logo{
       width:100%;
       aspect-ratio:1/1;
@@ -94,6 +119,8 @@
       background:#000;
       border:1px solid rgba(247,201,72,.55);
       overflow:hidden;
+      position:relative;
+      z-index:2;
     }
 
     .logo img{
@@ -164,11 +191,7 @@
     .btn.primary{
       border-color:rgba(247,201,72,.7);
       background:
-        linear-gradient(
-          135deg,
-          rgba(247,201,72,.18),
-          rgba(247,201,72,.035)
-        );
+        linear-gradient(135deg, rgba(247,201,72,.18), rgba(247,201,72,.035));
     }
 
     .btn strong{
@@ -253,8 +276,13 @@
 
     @media (max-width:760px){
 
-      header{
+      header,
+      .heroHeader{
         grid-template-columns:1fr;
+      }
+
+      .heroBg{
+        background-size:auto, auto, 420px;
       }
 
       .logo{
@@ -287,13 +315,16 @@
 
     <div class="card">
 
-      <header>
+      <header class="heroHeader">
+
+        <div class="heroBg"></div>
 
         <div class="logo">
           <img src="/public/hollow-drift-sigil.png" alt="Hollow Drift Sigil">
         </div>
 
-        <div>
+        <div class="heroContent">
+
           <h1>Hollow Drift</h1>
 
           <div class="tag">
@@ -310,6 +341,7 @@
             Learn the songs. Join the transmission.
             Become part of the broadcast.
           </div>
+
         </div>
 
       </header>
@@ -494,3 +526,4 @@
 
 </body>
 </html>
+```
