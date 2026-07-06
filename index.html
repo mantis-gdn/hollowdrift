@@ -171,6 +171,15 @@
       line-height:1.45;
     }
 
+    .proof{
+      margin-top:18px;
+      color:var(--gold);
+      font-family:var(--mono);
+      font-size:14px;
+      line-height:1.7;
+      letter-spacing:.04em;
+    }
+
     .ctaRow,
     .links{
       display:grid;
@@ -252,6 +261,48 @@
       color:var(--text);
     }
 
+    .countdown{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .countBox{
+      padding:16px 12px;
+      border-radius:14px;
+      border:1px solid rgba(247,201,72,.38);
+      background:rgba(247,201,72,.055);
+      text-align:center;
+    }
+
+    .countBox strong{
+      display:block;
+      color:var(--text);
+      font-size:34px;
+      line-height:1;
+    }
+
+    .countBox span{
+      display:block;
+      margin-top:8px;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .poster{
+      display:block;
+      width:100%;
+      max-width:760px;
+      margin:0 auto;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#000;
+    }
+
     .quickFacts{
       margin-top:16px;
       padding:14px 16px;
@@ -273,6 +324,18 @@
       color:var(--text);
     }
 
+    .alertBox{
+      margin-top:16px;
+      padding:16px;
+      border-radius:14px;
+      border:1px solid rgba(247,201,72,.65);
+      background:rgba(247,201,72,.11);
+      color:var(--gold);
+      font-family:var(--mono);
+      font-size:15px;
+      letter-spacing:.04em;
+    }
+
     .badgeRow{
       display:flex;
       flex-wrap:wrap;
@@ -288,6 +351,24 @@
       font-family:var(--mono);
       font-size:13px;
       background:rgba(255,255,255,.04);
+    }
+
+    .expectGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .expectItem{
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+      color:var(--text);
+      font-family:var(--mono);
+      font-size:14px;
+      line-height:1.5;
     }
 
     .soundcloudEmbed{
@@ -314,6 +395,41 @@
       border:0;
     }
 
+    .mapEmbed{
+      width:100%;
+      height:320px;
+      border:0;
+      border-radius:14px;
+      overflow:hidden;
+      background:#000;
+    }
+
+    .finalCta{
+      margin:0 34px 34px;
+      padding:30px;
+      border-radius:18px;
+      border:1px solid rgba(247,201,72,.58);
+      background:
+        linear-gradient(135deg, rgba(247,201,72,.13), rgba(123,60,255,.09)),
+        rgba(255,255,255,.035);
+      text-align:center;
+    }
+
+    .finalCta h2{
+      margin:0 0 12px;
+      font-size:clamp(30px,5vw,52px);
+      line-height:.98;
+      letter-spacing:-1px;
+    }
+
+    .finalCta p{
+      margin:0 auto 22px;
+      max-width:720px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.55;
+    }
+
     footer{
       padding:22px 34px;
       border-top:1px solid var(--line);
@@ -323,6 +439,11 @@
       flex-wrap:wrap;
       gap:16px;
       color:var(--muted);
+    }
+
+    footer a{
+      color:var(--gold);
+      text-decoration:none;
     }
 
     footer .motto{
@@ -344,7 +465,9 @@
       }
 
       .ctaRow,
-      .links{
+      .links,
+      .expectGrid,
+      .countdown{
         grid-template-columns:1fr;
       }
 
@@ -398,10 +521,14 @@
           </div>
 
           <div class="pitch">
-            Industrial groove metal. Glitch transmissions.
-            Broadcast sermons from the edge of the signal.
-            Learn the songs. Join the transmission.
-            Become part of the broadcast.
+            Learn the signal before the night of the broadcast.
+            Every stream, every share, every voice in the room becomes part of
+            <strong>The First Transmission.</strong>
+          </div>
+
+          <div class="proof">
+            Featured across Eventbrite • Songkick • AllEvents • ReverbNation<br>
+            Industrial Groove Metal from Pawtucket, Rhode Island
           </div>
 
         </div>
@@ -418,7 +545,7 @@
         >
           <div>
             <strong>Get Tickets</strong>
-            <span>2-for-1 Launch Promotion Active</span>
+            <span>⚠ Limited 2-for-1 Launch Tickets Remaining</span>
           </div>
 
           <div class="arrow">→</div>
@@ -437,6 +564,84 @@
 
           <div class="arrow">→</div>
         </a>
+
+      </section>
+
+      <section class="ctaRow">
+
+        <a
+          class="btn"
+          href="https://www.reverbnation.com/artist/hollowdrift"
+          target="_blank"
+          rel="noopener"
+        >
+          <div>
+            <strong>ReverbNation</strong>
+            <span>artist profile, music & events</span>
+          </div>
+
+          <div class="arrow">→</div>
+        </a>
+
+        <a
+          class="btn"
+          href="mailto:hollowdriftmusic@gmail.com"
+        >
+          <div>
+            <strong>Contact / Booking</strong>
+            <span>hollowdriftmusic@gmail.com</span>
+          </div>
+
+          <div class="arrow">→</div>
+        </a>
+
+      </section>
+
+      <section class="mini">
+
+        <div class="miniTitle">
+          Countdown To Transmission
+        </div>
+
+        <div class="showInfo">
+          The signal arrives August 27, 2026 at The Industrial in Pawtucket, RI.
+        </div>
+
+        <div class="countdown">
+          <div class="countBox">
+            <strong id="days">--</strong>
+            <span>Days</span>
+          </div>
+
+          <div class="countBox">
+            <strong id="hours">--</strong>
+            <span>Hours</span>
+          </div>
+
+          <div class="countBox">
+            <strong id="minutes">--</strong>
+            <span>Minutes</span>
+          </div>
+
+          <div class="countBox">
+            <strong id="seconds">--</strong>
+            <span>Seconds</span>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="mini">
+
+        <div class="miniTitle">
+          Event Poster
+        </div>
+
+        <img
+          class="poster"
+          src="/public/hollow-drift-first-transmission-flyer.png"
+          alt="Hollow Drift Presents The First Transmission Event Flyer"
+        >
 
       </section>
 
@@ -460,7 +665,8 @@
           <div class="quickFacts">
             All Ages<br>
             Industrial Groove Metal<br>
-            Pawtucket, RI
+            Pawtucket, Rhode Island<br>
+            Hollow Drift’s first live broadcast
           </div>
 
           <div class="priceBox">
@@ -469,12 +675,60 @@
             Limited Early Promotion: 2 Tickets for $10
           </div>
 
+          <div class="alertBox">
+            ⚠ Limited 2-for-1 Launch Tickets Remaining
+          </div>
+
           <div class="badgeRow">
             <div class="badge">Eventbrite</div>
             <div class="badge">Songkick</div>
             <div class="badge">AllEvents</div>
-            <div class="badge">ReverbNation</div>
+            <div class="badge">ReverbNation Artist</div>
           </div>
+        </div>
+
+      </section>
+
+      <section class="mini">
+
+        <div class="miniTitle">
+          Why This Show Matters
+        </div>
+
+        <div class="showInfo">
+          <strong>The First Transmission</strong> is the first live Hollow Drift broadcast.
+          The songs, sermons, glitches, and signals leave the headphones and enter the room.
+          This is not just a concert. This is the moment the signal becomes real.
+        </div>
+
+      </section>
+
+      <section class="mini">
+
+        <div class="miniTitle">
+          What To Expect
+        </div>
+
+        <div class="expectGrid">
+          <div class="expectItem">Live Hollow Drift performance</div>
+          <div class="expectItem">Industrial groove metal</div>
+          <div class="expectItem">Signal Preacher transmissions</div>
+          <div class="expectItem">Glitch-heavy broadcast energy</div>
+          <div class="expectItem">Exclusive event merchandise</div>
+          <div class="expectItem">All Ages event in Pawtucket</div>
+        </div>
+
+      </section>
+
+      <section class="mini">
+
+        <div class="miniTitle">
+          Merchandise
+        </div>
+
+        <div class="showInfo">
+          Exclusive Hollow Drift event merchandise will be available at the show.
+          Come ready to leave with proof that you were there when the signal hit the room.
         </div>
 
       </section>
@@ -537,18 +791,6 @@
           <div class="arrow">→</div>
         </a>
 
-        <a
-          class="btn"
-          href="mailto:hollowdriftmusic@gmail.com"
-        >
-          <div>
-            <strong>Contact / Booking</strong>
-            <span>email</span>
-          </div>
-
-          <div class="arrow">→</div>
-        </a>
-
       </section>
 
       <section class="mini">
@@ -586,9 +828,86 @@
 
       </section>
 
+      <section class="mini">
+
+        <div class="miniTitle">
+          Find The Venue
+        </div>
+
+        <div class="showInfo">
+          The Industrial<br>
+          173 Coyle Avenue<br>
+          Pawtucket, RI 02861
+        </div>
+
+        <br>
+
+        <iframe
+          class="mapEmbed"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=173%20Coyle%20Avenue%20Pawtucket%20RI%2002861&output=embed">
+        </iframe>
+
+      </section>
+
+      <section class="mini">
+
+        <div class="miniTitle">
+          Join The Signal Log
+        </div>
+
+        <div class="showInfo">
+          Get show announcements, new releases, and transmission updates directly from Hollow Drift.
+        </div>
+
+        <br>
+
+        <a
+          class="btn"
+          href="mailto:hollowdriftmusic@gmail.com?subject=Join%20The%20Signal%20Log&body=I%20want%20to%20join%20the%20Hollow%20Drift%20Signal%20Log."
+        >
+          <div>
+            <strong>Join The Signal Log</strong>
+            <span>email list request</span>
+          </div>
+
+          <div class="arrow">→</div>
+        </a>
+
+      </section>
+
+      <section class="finalCta">
+
+        <h2>Be In The Room When It Arrives.</h2>
+
+        <p>
+          The signal has already been transmitted. August 27, 2026.
+          The Industrial. Pawtucket, Rhode Island.
+          This is where Hollow Drift leaves the feed and enters the room.
+        </p>
+
+        <a
+          class="btn primary"
+          href="https://www.eventbrite.com/e/hollow-drift-presents-the-first-transmission-tickets-1992967207567"
+          target="_blank"
+          rel="noopener"
+        >
+          <div>
+            <strong>Get Tickets</strong>
+            <span>2-for-1 Launch Promotion Active</span>
+          </div>
+
+          <div class="arrow">→</div>
+        </a>
+
+      </section>
+
       <footer>
         <div>
-          © <span id="year"></span> Hollow Drift
+          © <span id="year"></span> Hollow Drift •
+          <a href="https://www.reverbnation.com/artist/hollowdrift" target="_blank" rel="noopener">ReverbNation</a>
         </div>
 
         <div class="motto">
@@ -603,6 +922,34 @@
   <script>
     document.getElementById('year').textContent =
       new Date().getFullYear();
+
+    const showDate = new Date('August 27, 2026 19:00:00');
+
+    function updateCountdown(){
+      const now = new Date();
+      const distance = showDate - now;
+
+      if(distance <= 0){
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById('days').textContent = String(days).padStart(2,'0');
+      document.getElementById('hours').textContent = String(hours).padStart(2,'0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
 
 </body>
