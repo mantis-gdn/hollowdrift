@@ -1,14 +1,13 @@
-```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hollow Drift — I Am the Signal</title>
+  <title>Hollow Drift — The First Transmission</title>
 
-  <meta name="description" content="Hollow Drift — Industrial groove metal, glitch transmissions, and broadcast sermons. Join The First Transmission." />
-  <meta property="og:title" content="Hollow Drift — I Am the Signal" />
-  <meta property="og:description" content="Industrial groove metal transmissions. Join The First Transmission." />
+  <meta name="description" content="Hollow Drift presents The First Transmission — August 27, 2026 at The Industrial in Pawtucket, RI. Industrial groove metal, glitch transmissions, and broadcast sermons." />
+  <meta property="og:title" content="Hollow Drift — The First Transmission" />
+  <meta property="og:description" content="August 27, 2026 at The Industrial in Pawtucket, RI. Industrial groove metal transmissions. Join the broadcast." />
   <meta name="theme-color" content="#07070a" />
 
   <style>
@@ -70,12 +69,16 @@
       box-shadow:0 24px 90px rgba(0,0,0,.72);
     }
 
-    header{
-      display:grid;
-      grid-template-columns:260px 1fr;
-      gap:34px;
-      align-items:center;
-      padding:34px;
+    .heroBanner{
+      width:100%;
+      background:#000;
+      border-bottom:1px solid var(--line);
+    }
+
+    .heroBanner img{
+      display:block;
+      width:100%;
+      height:auto;
     }
 
     .heroHeader{
@@ -93,7 +96,7 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(135deg, rgba(0,0,0,.86), rgba(0,0,0,.62)),
+        linear-gradient(135deg, rgba(0,0,0,.88), rgba(0,0,0,.66)),
         radial-gradient(circle at center, rgba(123,60,255,.30), transparent 62%),
         url("/public/hollow-drift-sigil.png");
       background-size:auto, auto, 680px;
@@ -103,11 +106,6 @@
       filter:blur(2px) saturate(1.2);
       transform:scale(1.08);
       z-index:-1;
-    }
-
-    .heroContent{
-      position:relative;
-      z-index:2;
     }
 
     .logo{
@@ -129,10 +127,24 @@
       object-fit:contain;
     }
 
+    .heroContent{
+      position:relative;
+      z-index:2;
+    }
+
+    .eyebrow{
+      color:var(--gold);
+      font-family:var(--mono);
+      font-size:15px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+
     h1{
       margin:0;
-      font-size:clamp(42px,7vw,72px);
-      line-height:.95;
+      font-size:clamp(42px,7vw,76px);
+      line-height:.92;
       letter-spacing:-2px;
     }
 
@@ -145,7 +157,7 @@
 
     .showAlert{
       margin-top:16px;
-      color:var(--gold);
+      color:var(--text);
       font-family:var(--mono);
       font-size:15px;
       letter-spacing:.04em;
@@ -226,12 +238,40 @@
       margin-bottom:14px;
       color:var(--gold);
       font-family:var(--mono);
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
 
     .showInfo{
       color:var(--muted);
       font-size:16px;
       line-height:1.6;
+    }
+
+    .priceBox{
+      margin-top:16px;
+      padding:16px;
+      border-radius:14px;
+      border:1px solid rgba(247,201,72,.45);
+      background:rgba(247,201,72,.06);
+      color:var(--text);
+    }
+
+    .badgeRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .badge{
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:8px 12px;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:13px;
+      background:rgba(255,255,255,.04);
     }
 
     .soundcloudEmbed{
@@ -275,8 +315,6 @@
     }
 
     @media (max-width:760px){
-
-      header,
       .heroHeader{
         grid-template-columns:1fr;
       }
@@ -315,6 +353,10 @@
 
     <div class="card">
 
+      <div class="heroBanner">
+        <img src="/public/hollow-drift-reverbnation-banner.png" alt="Hollow Drift Industrial Metal Banner">
+      </div>
+
       <header class="heroHeader">
 
         <div class="heroBg"></div>
@@ -325,7 +367,11 @@
 
         <div class="heroContent">
 
-          <h1>Hollow Drift</h1>
+          <div class="eyebrow">
+            Hollow Drift Presents
+          </div>
+
+          <h1>The First Transmission</h1>
 
           <div class="tag">
             I Am the Signal.
@@ -356,7 +402,7 @@
         >
           <div>
             <strong>Get Tickets</strong>
-            <span>August 27 · The Industrial</span>
+            <span>$10 general admission · limited 2-for-1 promo</span>
           </div>
 
           <div class="arrow">→</div>
@@ -375,6 +421,39 @@
 
           <div class="arrow">→</div>
         </a>
+
+      </section>
+
+      <section class="mini">
+
+        <div class="miniTitle">
+          Live Transmission
+        </div>
+
+        <div class="showInfo">
+          <strong>The First Transmission</strong><br>
+          August 27, 2026<br>
+          The Industrial<br>
+          173 Coyle Avenue<br>
+          Pawtucket, RI 02861<br><br>
+
+          Doors: 6:00 PM<br>
+          Show: 7:00 PM<br>
+          All Ages
+
+          <div class="priceBox">
+            <strong>Tickets:</strong><br>
+            $10 General Admission<br>
+            Limited Early Promotion: 2 Tickets for $10
+          </div>
+
+          <div class="badgeRow">
+            <div class="badge">Eventbrite</div>
+            <div class="badge">Songkick</div>
+            <div class="badge">AllEvents</div>
+            <div class="badge">ReverbNation</div>
+          </div>
+        </div>
 
       </section>
 
@@ -453,26 +532,6 @@
       <section class="mini">
 
         <div class="miniTitle">
-          Live Transmission
-        </div>
-
-        <div class="showInfo">
-          <strong>The First Transmission</strong><br>
-          August 27, 2026<br>
-          The Industrial<br>
-          173 Coyle Avenue<br>
-          Pawtucket, RI 02861<br><br>
-
-          Doors: 6:00 PM<br>
-          Show: 7:00 PM<br>
-          All Ages
-        </div>
-
-      </section>
-
-      <section class="mini">
-
-        <div class="miniTitle">
           Learn The Songs
         </div>
 
@@ -526,4 +585,3 @@
 
 </body>
 </html>
-```
