@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Hollow Drift Video Player</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px;
+      background: #111;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .video-player {
+      width: min(900px, 100%);
+      margin: 0 auto;
+    }
+
+    .video-player video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      object-fit: contain;
+    }
+
+    .video-info {
+      padding: 18px 0;
+    }
+
+    .video-title {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .video-description {
+      margin: 8px 0 0;
+      color: #bbb;
+      line-height: 1.5;
+    }
+
+    .playlist {
+      display: grid;
+      gap: 10px;
+    }
+
+    .playlist-button {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #444;
+      border-radius: 6px;
+      background: #222;
+      color: #fff;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .playlist-button:hover {
+      background: #333;
+      border-color: #777;
+    }
+
+    .playlist-button.active {
+      background: #444;
+      border-color: #fff;
+    }
+
+    .playlist-number {
+      display: inline-block;
+      min-width: 28px;
+      color: #aaa;
+    }
+
+    .player-message {
+      display: none;
+      margin: 12px 0;
+      padding: 12px;
+      border: 1px solid #833;
+      background: #311;
+      color: #fbb;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      .video-title {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="video-player">
+
+    <video
+      id="videoPlayer"
+      controls
+      preload="metadata"
+      playsinline
+      poster="public/flame.png"
+    >
+      Your browser does not support HTML5 video.
+    </video>
+
+    <div id="playerMessage" class="player-message"></div>
+
+    <section class="video-info">
+      <h1 id="videoTitle" class="video-title"></h1>
+      <p id="videoDescription" class="video-description"></p>
+    </section>
+
+    <section
+      id="playlist"
+      class="playlist"
+      aria-label="Video playlist"
+    ></section>
+
+  </main>
+
+  <script>
+    /*
+      video.html is in the project root.
+      Video files are stored in: /public/videos/
+
+      Replace the example filenames below with the exact filenames
+      inside your public/videos folder.
+    */
+
+    const videos = [
+      {
+        title: "Video One",
+        description: "Description for the first video.",
+        file: "public/videos/video_sample.mp4",
+        poster: "public/flame.png"
+      }
+    ];
+
+    const videoPlayer = document.getElementById("videoPlayer");
+    const videoTitle = document.getElementById("videoTitle");
+    const videoDescription = document.getElementById("videoDescription");
+    const playlist = document.getElementById("playlist");
+    const playerMessage = document.getElementById("playerMessage");
+
+    let currentVideoIndex = 0;
+    const playlistButtons = [];
+
+    function showMessage(message) {
+      playerMessage.textContent = message;
+      playerMessage.style.display = "block";
+    }
+
+    function hideMessage() {
+      playerMessage.textContent = "";
+      playerMessage.style.display = "none";
+    }
+
+    function updateActiveButton() {
+      playlistButtons.forEach((button, index) => {
+        const isActive = index === currentVideoIndex;
+
+        button.classList.toggle("active", isActive);
+
+        if (isActive) {
+          button.setAttribute("aria-current", "true");
+        } else {
+          button.removeAttribute("aria-current");
+        }
+      });
+    }
+
+    function loadVideo(index, shouldPlay = false) {
+      const video = videos[index];
+
+      if (!video) {
+        showMessage("This video could not be found.");
+        return;
+      }
+
+      hideMessage();
+      currentVideoIndex = index;
+
+      videoPlayer.pause();
+      videoPlayer.src = video.file;
+
+      if (video.poster) {
+        videoPlayer.poster = video.poster;
+      } else {
+        videoPlayer.removeAttribute("poster");
+      }
+
+      videoTitle.textContent = video.title;
+      videoDescription.textContent = video.description || "";
+
+      updateActiveButton();
+      videoPlayer.load();
+
+      if (shouldPlay) {
+        videoPlayer.play().catch(() => {
+          // Playback may be blocked until the visitor interacts with the page.
+        });
+      }
+    }
+
+    function playNextVideo() {
+      const nextIndex = (currentVideoIndex + 1) % videos.length;
+      loadVideo(nextIndex, true);
+    }
+
+    function createPlaylist() {
+      videos.forEach((video, index) => {
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "playlist-button";
+
+        const number = document.createElement("span");
+        number.className = "playlist-number";
+        number.textContent = `${index + 1}.`;
+
+        const title = document.createElement("span");
+        title.textContent = video.title;
+
+        button.append(number, title);
+
+        button.addEventListener("click", () => {
+          loadVideo(index, true);
+        });
+
+        playlist.appendChild(button);
+        playlistButtons.push(button);
+      });
+    }
+
+    videoPlayer.addEventListener("ended", playNextVideo);
+
+    videoPlayer.addEventListener("error", () => {
+      const video = videos[currentVideoIndex];
+
+      showMessage(
+        `Unable to load "${video.title}". Check that the file exists at ${video.file}.`
+      );
+    });
+
+    createPlaylist();
+    loadVideo(0);
+  </script>
+
+</body>
+</html>
