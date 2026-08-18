@@ -96,6 +96,34 @@
       height:auto;
     }
 
+
+    .siteNav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:14px 34px;
+      border-bottom:1px solid var(--line);
+      background:rgba(0,0,0,.35);
+    }
+
+    .siteNav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-family:var(--mono);
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+
+    .siteNav a:hover{
+      color:var(--gold);
+      border-color:rgba(247,201,72,.35);
+      background:rgba(247,201,72,.05);
+    }
+
     .heroHeader{
       position:relative;
       display:grid;
@@ -467,6 +495,7 @@
     }
 
     @media (max-width:760px){
+      .siteNav{ padding:12px 18px; }
       .heroHeader{
         grid-template-columns:1fr;
       }
@@ -510,6 +539,13 @@
       <div class="heroBanner">
         <img src="/public/hollow-drift-reverbnation-banner-color.png" alt="Hollow Drift Industrial Metal Banner">
       </div>
+
+      <nav class="siteNav" aria-label="Primary">
+        <a href="#live">Live</a>
+        <a href="#music">Music</a>
+        <a href="#merch">Merch</a>
+        <a href="#connect">Connect</a>
+      </nav>
 
       <header class="heroHeader">
 
@@ -560,7 +596,7 @@
         >
           <div>
             <strong>Get Tickets</strong>
-            <span>⚠ Limited 2-for-1 Launch Tickets Remaining</span>
+            <span>August 27 • $10 General Admission</span>
           </div>
 
           <div class="arrow">→</div>
@@ -660,7 +696,7 @@
 
       </section>
 
-      <section class="mini">
+      <section class="mini" id="live">
 
         <div class="miniTitle">
           Live Transmission
@@ -678,27 +714,12 @@
           All Ages
 
           <div class="quickFacts">
-            All Ages<br>
-            Industrial Groove Metal<br>
-            Pawtucket, Rhode Island<br>
+            All Ages • Industrial Groove Metal • Pawtucket, Rhode Island<br>
             Hollow Drift’s first live broadcast
           </div>
 
           <div class="priceBox">
-            <strong>Tickets:</strong><br>
-            $10 General Admission<br>
-            Limited Early Promotion: 2 Tickets for $10
-          </div>
-
-          <div class="alertBox">
-            ⚠ Limited 2-for-1 Launch Tickets Remaining
-          </div>
-
-          <div class="badgeRow">
-            <div class="badge">Eventbrite</div>
-            <div class="badge">Songkick</div>
-            <div class="badge">AllEvents</div>
-            <div class="badge">ReverbNation Artist</div>
+            <strong>Tickets:</strong> $10 General Admission
           </div>
         </div>
 
@@ -735,23 +756,10 @@
 
       </section>
 
-      <section class="mini">
+      <section class="mini" id="merch">
 
         <div class="miniTitle">
-          Merchandise
-        </div>
-
-        <div class="showInfo">
-          Exclusive Hollow Drift event merchandise will be available at the show.
-          Come ready to leave with proof that you were there when the signal hit the room.
-        </div>
-
-      </section>
-
-      <section class="mini">
-
-        <div class="miniTitle">
-          Hats For Sale
+          Official Hollow Drift Hats
         </div>
 
         <a href="mailto:hollowdriftmusic@gmail.com?subject=Hollow%20Drift%20Hat%20Inquiry" aria-label="Email Hollow Drift for hat details" style="display:block;">
@@ -763,8 +771,7 @@
         </a>
 
         <div class="showInfo" style="margin-top:16px;">
-          Official Hollow Drift embroidered Richardson hats — <strong>$35</strong>.
-          Email for details.
+          Official embroidered Richardson hats — <strong>$35</strong>. Email for details or show pickup.
         </div>
 
         <div style="margin-top:16px;">
@@ -782,7 +789,7 @@
 
       </section>
 
-      <section class="links">
+      <section class="links" id="connect">
 
         <a
           class="btn"
@@ -870,7 +877,7 @@
 
       </section>
 
-      <section class="mini">
+      <section class="mini" id="music">
 
         <div class="miniTitle">
           Learn The Songs
@@ -891,7 +898,7 @@
       <section class="mini">
 
         <div class="miniTitle">
-          Heavy AF (public)
+          Heavy AF
         </div>
 
         <iframe
@@ -996,7 +1003,7 @@
         >
           <div>
             <strong>Get Tickets</strong>
-            <span>2-for-1 Launch Promotion Active</span>
+            <span>August 27 • The Industrial • Pawtucket</span>
           </div>
 
           <div class="arrow">→</div>
@@ -1023,7 +1030,7 @@
     document.getElementById('year').textContent =
       new Date().getFullYear();
 
-    const showDate = new Date('August 27, 2026 19:00:00');
+    const showDate = new Date('2026-08-27T19:00:00-04:00');
 
     function updateCountdown(){
       const now = new Date();
