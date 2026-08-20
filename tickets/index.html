@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Tickets — Hollow Drift: The First Transmission</title>
+
+  <meta
+    name="description"
+    content="Tickets for Hollow Drift Presents The First Transmission — August 27, 2026 at The Industrial in Pawtucket, Rhode Island."
+  >
+
+  <meta name="theme-color" content="#07070a">
+
+  <meta property="og:title" content="Hollow Drift — The First Transmission">
+  <meta
+    property="og:description"
+    content="August 27, 2026 • The Industrial • Pawtucket, RI • $10 • All Ages"
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hollowdrift.com/tickets/">
+  <meta
+    property="og:image"
+    content="https://hollowdrift.com/public/hollow-drift-facebook-preview-safe-1200x630.png"
+  >
+
+  <style>
+    :root {
+      --bg: #050507;
+      --card: rgba(10,10,14,.94);
+      --text: #f4f4f6;
+      --muted: rgba(244,244,246,.72);
+      --line: rgba(255,255,255,.15);
+      --gold: #f7c948;
+      --purple: #7b3cff;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+              "Courier New", monospace;
+      --sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+              Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: var(--sans);
+
+      background:
+        radial-gradient(
+          900px 600px at 85% 20%,
+          rgba(123,60,255,.25),
+          transparent 55%
+        ),
+        radial-gradient(
+          700px 500px at 15% 85%,
+          rgba(247,201,72,.14),
+          transparent 60%
+        ),
+        #030305;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 760px;
+
+      border: 1px solid var(--line);
+      border-radius: 24px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.07),
+          rgba(255,255,255,.025)
+        ),
+        var(--card);
+
+      box-shadow: 0 24px 90px rgba(0,0,0,.75);
+      overflow: hidden;
+    }
+
+    .banner img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #000;
+    }
+
+    .content {
+      padding: 36px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-family: var(--mono);
+      font-size: 14px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 9vw, 72px);
+      line-height: .94;
+      letter-spacing: -2px;
+    }
+
+    .signal {
+      margin-top: 14px;
+      color: var(--gold);
+      font-family: var(--mono);
+      font-size: 20px;
+    }
+
+    .details {
+      margin: 30px auto 0;
+      max-width: 560px;
+
+      padding: 20px;
+
+      border: 1px solid var(--line);
+      border-radius: 16px;
+
+      background: rgba(255,255,255,.035);
+
+      font-family: var(--mono);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .details strong {
+      color: var(--gold);
+    }
+
+    .price {
+      margin-top: 22px;
+      font-size: 34px;
+      font-weight: 800;
+    }
+
+    .ages {
+      margin-top: 5px;
+      color: var(--muted);
+      font-family: var(--mono);
+    }
+
+    .ticketButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+
+      width: 100%;
+      min-height: 86px;
+
+      margin-top: 30px;
+      padding: 20px 26px;
+
+      border-radius: 16px;
+      border: 1px solid rgba(247,201,72,.75);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(247,201,72,.20),
+          rgba(247,201,72,.05)
+        );
+
+      color: var(--text);
+      text-decoration: none;
+
+      font-size: 26px;
+      font-weight: 800;
+
+      transition: .15s ease;
+    }
+
+    .ticketButton:hover {
+      transform: translateY(-2px);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(247,201,72,.30),
+          rgba(247,201,72,.08)
+        );
+    }
+
+    .arrow {
+      color: var(--gold);
+      font-size: 34px;
+    }
+
+    .secure {
+      margin-top: 12px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 30px;
+
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 13px;
+
+      text-decoration: none;
+    }
+
+    .back:hover {
+      color: var(--gold);
+    }
+
+    .motto {
+      padding: 18px 24px;
+
+      border-top: 1px solid var(--line);
+
+      color: var(--gold);
+      font-family: var(--mono);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 12px;
+      }
+
+      .content {
+        padding: 28px 20px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .ticketButton {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="card">
+
+    <div class="banner">
+      <img
+        src="/public/hollow-drift-reverbnation-banner-color.png"
+        alt="Hollow Drift"
+      >
+    </div>
+
+    <section class="content">
+
+      <div class="eyebrow">
+        Hollow Drift Presents
+      </div>
+
+      <h1>
+        The First<br>
+        Transmission
+      </h1>
+
+      <div class="signal">
+        I Am the Signal.
+      </div>
+
+      <div class="details">
+        <strong>AUGUST 27, 2026</strong><br>
+        The Industrial<br>
+        173 Coyle Avenue<br>
+        Pawtucket, Rhode Island<br><br>
+
+        Doors: 6:00 PM<br>
+        Show: 7:00 PM
+      </div>
+
+      <div class="price">
+        $10
+      </div>
+
+      <div class="ages">
+        GENERAL ADMISSION • ALL AGES
+      </div>
+
+      <a
+        class="ticketButton"
+        href="https://www.eventbrite.com/e/hollow-drift-presents-the-first-transmission-tickets-1992967207567"
+        target="_blank"
+        rel="noopener"
+      >
+        BUY TICKETS
+        <span class="arrow">→</span>
+      </a>
+
+      <div class="secure">
+        Ticket purchase opens securely through Eventbrite.
+      </div>
+
+      <a
+        class="back"
+        href="/"
+      >
+        ← Return to HollowDrift.com
+      </a>
+
+    </section>
+
+    <div class="motto">
+      BUILT FOR THE ROOM. NOT THE RECORDING.
+    </div>
+
+  </main>
+
+  <!-- Cloudflare Web Analytics -->
+  <script
+    type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token":"3454a87f86b94c099e6b988c87b2df5c"}'>
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+
+</body>
+</html>
