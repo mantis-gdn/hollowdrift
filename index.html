@@ -485,8 +485,54 @@
       font-family:var(--mono);
     }
 
+    .pressSpotlight{
+      margin:0 34px 34px;
+      padding:22px;
+      border-radius:16px;
+      border:1px solid rgba(247,201,72,.48);
+      background:linear-gradient(135deg, rgba(247,201,72,.08), rgba(123,60,255,.055)), rgba(255,255,255,.035);
+    }
+
+    .pressSpotlightInner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:22px;
+      align-items:center;
+    }
+
+    .pressKicker{
+      color:var(--gold);
+      font-family:var(--mono);
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    .pressSpotlight h2{
+      margin:0;
+      font-size:clamp(24px,4vw,38px);
+      line-height:1.05;
+      letter-spacing:-.5px;
+    }
+
+    .pressSpotlight p{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.55;
+      max-width:760px;
+    }
+
+    .pressSpotlight .btn{
+      margin-top:16px;
+      max-width:390px;
+    }
+
     @media (max-width:760px){
       .siteNav{ padding:12px 18px; }
+      .pressSpotlight{ margin:0 18px 24px; }
+      .pressSpotlightInner{ grid-template-columns:1fr; }
       .heroHeader{
         grid-template-columns:1fr;
       }
@@ -566,7 +612,7 @@
           </div>
 
           <div class="proof">
-            Featured across Eventbrite • Songkick • AllEvents • ReverbNation<br>
+            Featured in The Valley Breeze • Eventbrite • Songkick • AllEvents • ReverbNation<br>
             Industrial Groove Metal from Pawtucket, Rhode Island
           </div>
 
@@ -634,6 +680,33 @@
           <div class="arrow">→</div>
         </a>
 
+      </section>
+
+      <section class="pressSpotlight" aria-label="Press coverage">
+        <div class="pressSpotlightInner">
+          <div>
+            <div class="pressKicker">Featured in The Valley Breeze • August 20, 2026</div>
+            <h2>Hollow Drift featured ahead of The First Transmission</h2>
+            <p>
+              The Valley Breeze profiles Hollow Drift, the industrial and electronic elements behind the project,
+              and the August 27 live broadcast at The Industrial in Pawtucket.
+            </p>
+            <a class="btn primary" href="https://www.valleybreeze.com/lifestyle/entertainment/hollow-drift-blends-elements-of-electronic-and-industrial-for-the-first-transmission-at-the-industrial/article_4acc1d10-ddc5-4748-9e6e-ba7c6bcda204.html" target="_blank" rel="noopener">
+              <div>
+                <strong>Read The Valley Breeze Feature</strong>
+                <span>Press coverage • August 20, 2026</span>
+              </div>
+              <div class="arrow">→</div>
+            </a>
+          </div>
+          <a class="btn" href="/press/">
+            <div>
+              <strong>Press / Media</strong>
+              <span>bio, coverage, assets & booking</span>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+        </div>
       </section>
 
       <section class="mini">
