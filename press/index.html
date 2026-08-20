@@ -304,6 +304,62 @@
       line-height:1;
     }
 
+
+    .pressFeature{
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:20px;
+      align-items:center;
+    }
+
+    .pressFeatureImage{
+      aspect-ratio:1 / 1;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(123,60,255,.20), rgba(247,201,72,.08)),
+        rgba(255,255,255,.035);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+      letter-spacing:.08em;
+      text-align:center;
+      text-transform:uppercase;
+      padding:18px;
+    }
+
+    .pressFeatureImage img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .pressFeatureMeta{
+      color:var(--gold);
+      font-family:var(--mono);
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    .pressFeature h2{
+      margin:0 0 16px;
+      font-size:clamp(24px,4vw,38px);
+      line-height:1.08;
+      letter-spacing:-.5px;
+    }
+
+    .pressFeature .btn{
+      display:inline-flex;
+      width:auto;
+      min-height:56px;
+    }
+
     .contact{
       margin-top:8px;
       color:var(--muted);
@@ -367,6 +423,14 @@
 
       .links{
         grid-template-columns:1fr;
+      }
+
+      .pressFeature{
+        grid-template-columns:1fr;
+      }
+
+      .pressFeatureImage{
+        max-width:220px;
       }
 
       h1{
@@ -446,6 +510,32 @@
             <div><strong>Sound:</strong> Groove-first, glitch-heavy, low-end driven</div>
             <div><strong>Visual Language:</strong> Signal, broadcast, neon, interference</div>
             <div><strong>Audience:</strong> Metal, industrial, alt-rock, nu-metal, post-hardcore</div>
+          </div>
+        </div>
+
+        <div class="panel full">
+          <div class="panelTitle">Press Coverage</div>
+          <div class="pressFeature">
+            <div class="pressFeatureImage" aria-label="Square headshot placeholder">
+              <img src="/public/hollow-drift-headshot-square.png" alt="Hollow Drift press headshot">
+            </div>
+
+            <div>
+              <div class="pressFeatureMeta">The Valley Breeze • August 20, 2026</div>
+              <h2>Hollow Drift blends elements of electronic and industrial for ‘The First Transmission’ at The Industrial</h2>
+              <a
+                class="btn primary"
+                href="https://www.valleybreeze.com/lifestyle/entertainment/hollow-drift-blends-elements-of-electronic-and-industrial-for-the-first-transmission-at-the-industrial/article_4acc1d10-ddc5-4748-9e6e-ba7c6bcda204.html"
+                target="_blank"
+                rel="noopener"
+              >
+                <div>
+                  <strong>Read the Valley Breeze Feature</strong>
+                  <span>external press coverage</span>
+                </div>
+                <div class="arrow">→</div>
+              </a>
+            </div>
           </div>
         </div>
 
