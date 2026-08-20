@@ -115,6 +115,19 @@
       background:rgba(247,201,72,.05);
     }
 
+    .siteNav .active{
+      color:var(--gold);
+      font-family:var(--mono);
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(247,201,72,.55);
+      background:rgba(247,201,72,.08);
+      cursor:default;
+    }
+
     .hero{
       position:relative;
       display:grid;
@@ -377,6 +390,7 @@
         <a href="/tickets/">Tickets</a>
         <a href="/go/first-transmission/" target="_blank" rel="noopener">Listen</a>
         <a href="#contact">Contact</a>
+        <span class="active" aria-current="page">Press</span>
       </nav>
 
       <header class="hero">
