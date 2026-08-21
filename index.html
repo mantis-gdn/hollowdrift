@@ -106,7 +106,8 @@
       background:rgba(0,0,0,.35);
     }
 
-    .siteNav a{
+    .siteNav a,
+    .siteNav .active{
       color:var(--muted);
       text-decoration:none;
       font-family:var(--mono);
@@ -122,6 +123,13 @@
       color:var(--gold);
       border-color:rgba(247,201,72,.35);
       background:rgba(247,201,72,.05);
+    }
+
+    .siteNav .active{
+      color:var(--gold);
+      border-color:rgba(247,201,72,.55);
+      background:rgba(247,201,72,.08);
+      cursor:default;
     }
 
     .heroHeader{
@@ -544,7 +552,8 @@
         display:none;
       }
 
-      .siteNav a{
+      .siteNav a,
+      .siteNav .active{
         flex:0 0 auto;
         font-size:11px;
         letter-spacing:.045em;
@@ -621,6 +630,7 @@
       </div>
 
       <nav class="siteNav" aria-label="Primary">
+        <span class="active" aria-current="page">Home</span>
         <a href="/tickets/">Tickets</a>
         <a href="/music/">Music</a>
         <a href="/merch/">Merch</a>
