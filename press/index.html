@@ -403,6 +403,27 @@
     }
 
     @media (max-width:760px){
+      .siteNav{
+        padding:10px;
+        gap:4px;
+        flex-wrap:nowrap;
+        justify-content:space-between;
+        overflow-x:auto;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+      }
+
+      .siteNav::-webkit-scrollbar{ display:none; }
+
+      .siteNav a,
+      .siteNav .active{
+        flex:0 0 auto;
+        font-size:10.5px;
+        letter-spacing:.025em;
+        padding:7px 5px;
+        white-space:nowrap;
+      }
+
       .hero{
         grid-template-columns:1fr;
         padding:24px 20px 26px;
@@ -452,8 +473,9 @@
       <nav class="siteNav" aria-label="Press page navigation">
         <a href="/">Home</a>
         <a href="/tickets/">Tickets</a>
-        <a href="/go/first-transmission/" target="_blank" rel="noopener">Listen</a>
-        <a href="#contact">Contact</a>
+        <a href="/music/">Music</a>
+        <a href="/merch/">Merch</a>
+        <a href="/connect/">Connect</a>
         <span class="active" aria-current="page">Press</span>
       </nav>
 
