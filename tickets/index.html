@@ -45,6 +45,8 @@
       --line:rgba(255,255,255,.15);
       --gold:#f7c948;
       --purple:#7b3cff;
+      --radius:22px;
+      --max:1040px;
       --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Courier New",monospace;
       --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
@@ -60,17 +62,19 @@
         radial-gradient(900px 600px at 85% 20%, rgba(123,60,255,.25), transparent 55%),
         radial-gradient(700px 500px at 15% 85%, rgba(247,201,72,.14), transparent 60%),
         #030305;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
+      padding:34px 18px 64px;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--max);
+      margin:0 auto;
     }
 
     .card{
       width:100%;
-      max-width:760px;
       border:1px solid var(--line);
-      border-radius:24px;
+      border-radius:var(--radius);
       background:
         linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.025)),
         var(--card);
@@ -93,8 +97,7 @@
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      padding:14px 24px;
-      border-top:1px solid var(--line);
+      padding:14px 28px;
       border-bottom:1px solid var(--line);
       background:rgba(0,0,0,.35);
     }
@@ -129,7 +132,7 @@
     }
 
     .content{
-      padding:36px;
+      padding:42px 32px 38px;
       text-align:center;
     }
 
@@ -144,7 +147,7 @@
 
     h1{
       margin:0;
-      font-size:clamp(42px,9vw,72px);
+      font-size:clamp(42px,8vw,76px);
       line-height:.94;
       letter-spacing:-2px;
     }
@@ -158,8 +161,8 @@
 
     .details{
       margin:30px auto 0;
-      max-width:560px;
-      padding:20px;
+      max-width:620px;
+      padding:22px;
       border:1px solid var(--line);
       border-radius:16px;
       background:rgba(255,255,255,.035);
@@ -188,8 +191,9 @@
       justify-content:center;
       gap:16px;
       width:100%;
+      max-width:620px;
       min-height:86px;
-      margin-top:30px;
+      margin:30px auto 0;
       padding:20px 26px;
       border-radius:16px;
       border:1px solid rgba(247,201,72,.75);
@@ -273,65 +277,67 @@
 
 <body>
 
-  <main class="card">
+  <main class="wrap">
+    <div class="card">
 
-    <div class="banner">
-      <img
-        src="/public/hollow-drift-reverbnation-banner-color.png"
-        alt="Hollow Drift Industrial Metal Banner"
-      >
+      <div class="banner">
+        <img
+          src="/public/hollow-drift-reverbnation-banner-color.png"
+          alt="Hollow Drift Industrial Metal Banner"
+        >
+      </div>
+
+      <nav class="siteNav" aria-label="Tickets page navigation">
+        <a href="/">Home</a>
+        <span class="active" aria-current="page">Tickets</span>
+        <a href="/music/">Music</a>
+        <a href="/merch/">Merch</a>
+        <a href="/connect/">Connect</a>
+        <a href="/press/">Press</a>
+      </nav>
+
+      <section class="content">
+
+        <div class="eyebrow">Hollow Drift Presents</div>
+
+        <h1>The First<br>Transmission</h1>
+
+        <div class="signal">I Am the Signal.</div>
+
+        <div class="details">
+          <strong>AUGUST 27, 2026</strong><br>
+          The Industrial<br>
+          173 Coyle Avenue<br>
+          Pawtucket, Rhode Island<br><br>
+          Doors: 6:00 PM<br>
+          Show: 7:00 PM
+        </div>
+
+        <div class="price">$10</div>
+
+        <div class="ages">GENERAL ADMISSION • ALL AGES</div>
+
+        <a
+          class="ticketButton"
+          href="https://www.eventbrite.com/e/hollow-drift-presents-the-first-transmission-tickets-1992967207567"
+          target="_blank"
+          rel="noopener"
+        >
+          BUY TICKETS
+          <span class="arrow">→</span>
+        </a>
+
+        <div class="secure">
+          Ticket purchase opens securely through Eventbrite.
+        </div>
+
+        <a class="back" href="/">← Return to HollowDrift.com</a>
+
+      </section>
+
+      <div class="motto">BUILT FOR THE ROOM. NOT THE RECORDING.</div>
+
     </div>
-
-    <nav class="siteNav" aria-label="Tickets page navigation">
-      <a href="/">Home</a>
-      <span class="active" aria-current="page">Tickets</span>
-      <a href="/music/">Music</a>
-      <a href="/merch/">Merch</a>
-      <a href="/connect/">Connect</a>
-      <a href="/press/">Press</a>
-    </nav>
-
-    <section class="content">
-
-      <div class="eyebrow">Hollow Drift Presents</div>
-
-      <h1>The First<br>Transmission</h1>
-
-      <div class="signal">I Am the Signal.</div>
-
-      <div class="details">
-        <strong>AUGUST 27, 2026</strong><br>
-        The Industrial<br>
-        173 Coyle Avenue<br>
-        Pawtucket, Rhode Island<br><br>
-        Doors: 6:00 PM<br>
-        Show: 7:00 PM
-      </div>
-
-      <div class="price">$10</div>
-
-      <div class="ages">GENERAL ADMISSION • ALL AGES</div>
-
-      <a
-        class="ticketButton"
-        href="https://www.eventbrite.com/e/hollow-drift-presents-the-first-transmission-tickets-1992967207567"
-        target="_blank"
-        rel="noopener"
-      >
-        BUY TICKETS
-        <span class="arrow">→</span>
-      </a>
-
-      <div class="secure">
-        Ticket purchase opens securely through Eventbrite.
-      </div>
-
-      <a class="back" href="/">← Return to HollowDrift.com</a>
-
-    </section>
-
-    <div class="motto">BUILT FOR THE ROOM. NOT THE RECORDING.</div>
-
   </main>
 
   <!-- Cloudflare Web Analytics -->
