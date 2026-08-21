@@ -244,6 +244,28 @@
       body{ padding:12px; }
       .content{ padding:28px 20px; }
       h1{ font-size:48px; }
+
+      .siteNav{
+        padding:10px;
+        gap:4px;
+        flex-wrap:nowrap;
+        justify-content:space-between;
+        overflow-x:auto;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+      }
+
+      .siteNav::-webkit-scrollbar{ display:none; }
+
+      .siteNav a,
+      .siteNav .active{
+        flex:0 0 auto;
+        font-size:10.5px;
+        letter-spacing:.025em;
+        padding:7px 5px;
+        white-space:nowrap;
+      }
+
       .ticketButton{ font-size:22px; }
     }
   </style>
@@ -263,9 +285,10 @@
     <nav class="siteNav" aria-label="Tickets page navigation">
       <a href="/">Home</a>
       <span class="active" aria-current="page">Tickets</span>
-      <a href="/go/first-transmission/" target="_blank" rel="noopener">Listen</a>
+      <a href="/music/">Music</a>
+      <a href="/merch/">Merch</a>
+      <a href="/connect/">Connect</a>
       <a href="/press/">Press</a>
-      <a href="/press/#contact">Contact</a>
     </nav>
 
     <section class="content">
