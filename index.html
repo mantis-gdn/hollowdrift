@@ -552,6 +552,32 @@
         white-space:nowrap;
       }
 
+      .btn > div:first-child{
+        min-width:0;
+      }
+
+      .btn span{
+        overflow-wrap:anywhere;
+        word-break:break-word;
+      }
+
+      #merch .btn{
+        gap:10px;
+        padding:16px;
+      }
+
+      #merch .btn strong{
+        font-size:20px;
+      }
+
+      #merch .btn span{
+        font-size:12px;
+      }
+
+      #merch .arrow{
+        flex:0 0 auto;
+      }
+
       .pressSpotlight{ margin:0 18px 24px; }
       .pressSpotlightInner{ grid-template-columns:1fr; }
       .heroHeader{
@@ -596,7 +622,7 @@
 
       <nav class="siteNav" aria-label="Primary">
         <a href="/tickets/">Tickets</a>
-        <a href="#music">Music</a>
+        <a href="/music/">Music</a>
         <a href="#merch">Merch</a>
         <a href="/press/#contact">Connect</a>
         <a href="/press/">Press</a>
@@ -659,13 +685,11 @@
 
         <a
           class="btn"
-          href="/go/first-transmission/"
-          target="_blank"
-          rel="noopener"
+          href="/music/"
         >
           <div>
-            <strong>Open Playlist</strong>
-            <span>The First Transmission</span>
+            <strong>Explore The Music</strong>
+            <span>tracks, playlists & transmissions</span>
           </div>
 
           <div class="arrow">→</div>
@@ -959,24 +983,29 @@
 
       </section>
 
-<section class="mini" id="music">
-
-        <div class="miniTitle">
-          Latest Transmission
-        </div>
-
-        <div class="embed">
-          <iframe
-            src="https://www.youtube.com/embed/kP7krVNn20A"
-            title="Hollow Drift Latest Transmission"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-
-      </section>
 
       <section class="mini">
+        <div class="miniTitle">
+          Music / Transmissions
+        </div>
+
+        <div class="showInfo">
+          Hollow Drift lives beyond a single track. Explore the latest transmission,
+          The First Transmission playlist, videos, and direct listening links on the dedicated music page.
+        </div>
+
+        <div style="margin-top:16px;">
+          <a class="btn primary" href="/music/">
+            <div>
+              <strong>Enter The Music Archive</strong>
+              <span>latest tracks • playlist • video</span>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+        </div>
+      </section>
+
+<section class="mini">
 
         <div class="miniTitle">
           Find The Venue

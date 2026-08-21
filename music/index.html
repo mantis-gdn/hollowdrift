@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Music — Hollow Drift</title>
+  <meta name="description" content="Music and transmissions from Hollow Drift — industrial groove metal from Pawtucket, Rhode Island.">
+  <meta name="theme-color" content="#07070a">
+  <meta property="og:title" content="Hollow Drift — Music">
+  <meta property="og:description" content="Tracks, playlists, videos, and signal transmissions from Hollow Drift.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hollowdrift.com/music/">
+  <meta property="og:site_name" content="Hollow Drift">
+  <meta property="og:image" content="https://hollowdrift.com/public/hollow-drift-facebook-preview-safe-1200x630.png">
+  <style>
+    :root{
+      --card:rgba(10,10,14,.92);
+      --text:#f4f4f6;
+      --muted:rgba(244,244,246,.72);
+      --line:rgba(255,255,255,.15);
+      --gold:#f7c948;
+      --purple:#7b3cff;
+      --radius:22px;
+      --max:1040px;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Courier New",monospace;
+      --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;min-height:100vh;color:var(--text);font-family:var(--sans);
+      background:
+        radial-gradient(900px 600px at 85% 20%, rgba(123,60,255,.24), transparent 55%),
+        radial-gradient(800px 520px at 10% 85%, rgba(247,201,72,.13), transparent 58%),
+        #030305;
+      overflow-x:hidden;
+    }
+    .wrap{max-width:var(--max);margin:0 auto;padding:34px 18px 64px}
+    .card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,rgba(255,255,255,.065),rgba(255,255,255,.02)),var(--card);box-shadow:0 24px 90px rgba(0,0,0,.72)}
+    .heroBanner{width:100%;background:#000;border-bottom:1px solid var(--line)}
+    .heroBanner img{display:block;width:100%;height:auto}
+    .siteNav{display:flex;gap:10px;flex-wrap:wrap;padding:14px 28px;border-bottom:1px solid var(--line);background:rgba(0,0,0,.35)}
+    .siteNav a,.siteNav .active{color:var(--muted);text-decoration:none;font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:8px 10px;border-radius:999px;border:1px solid transparent}
+    .siteNav a:hover{color:var(--gold);border-color:rgba(247,201,72,.35);background:rgba(247,201,72,.05)}
+    .siteNav .active{color:var(--gold);border-color:rgba(247,201,72,.55);background:rgba(247,201,72,.08)}
+    .hero{padding:34px 32px;background:linear-gradient(135deg,rgba(0,0,0,.86),rgba(0,0,0,.62)),radial-gradient(circle at 72% 40%,rgba(123,60,255,.26),transparent 58%)}
+    .eyebrow{color:var(--gold);font-family:var(--mono);font-size:14px;letter-spacing:.16em;text-transform:uppercase}
+    h1{margin:8px 0 0;font-size:clamp(44px,7vw,76px);line-height:.94;letter-spacing:-2px}
+    .tag{margin-top:12px;color:var(--gold);font-family:var(--mono);font-size:20px}
+    .pitch{margin-top:18px;max-width:760px;color:var(--muted);font-size:20px;line-height:1.5}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:0 32px 32px}
+    .panel{border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035);padding:22px}
+    .panel.full{grid-column:1/-1}
+    .panelTitle{margin-bottom:12px;color:var(--gold);font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;font-size:14px}
+    .panel p{margin:0;color:var(--muted);font-size:16px;line-height:1.65}
+    .btn{min-height:64px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.045);color:var(--text);text-decoration:none;display:flex;justify-content:space-between;align-items:center;gap:14px;transition:.15s ease}
+    .btn:hover{transform:translateY(-2px);border-color:rgba(247,201,72,.65);background:rgba(255,255,255,.075)}
+    .btn.primary{border-color:rgba(247,201,72,.7);background:linear-gradient(135deg,rgba(247,201,72,.18),rgba(247,201,72,.035))}
+    .btn strong{display:block;font-size:18px;line-height:1.15}
+    .btn span{display:block;margin-top:4px;color:var(--muted);font-family:var(--mono);font-size:12px}
+    .arrow{color:var(--gold);font-size:28px;line-height:1;flex:0 0 auto}
+    .links{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+    .embed{width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;border:1px solid var(--line)}
+    .embed iframe{width:100%;height:100%;border:0}
+    footer{padding:20px 28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+    .motto{color:var(--gold);font-family:var(--mono)}
+    @media(max-width:760px){
+      .siteNav{padding:10px;gap:4px;flex-wrap:nowrap;justify-content:space-between;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+      .siteNav::-webkit-scrollbar{display:none}
+      .siteNav a,.siteNav .active{flex:0 0 auto;font-size:11px;letter-spacing:.045em;padding:7px 6px;white-space:nowrap}
+      .grid{grid-template-columns:1fr;padding:0 20px 24px}
+      .panel.full{grid-column:auto}
+      .links{grid-template-columns:1fr}
+      .hero{padding:28px 20px}
+      h1{font-size:52px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="card">
+      <div class="heroBanner">
+        <img src="/public/hollow-drift-reverbnation-banner-color.png" alt="Hollow Drift Industrial Metal Banner">
+      </div>
+
+      <nav class="siteNav" aria-label="Music page navigation">
+        <a href="/">Home</a>
+        <a href="/tickets/">Tickets</a>
+        <span class="active" aria-current="page">Music</span>
+        <a href="/#merch">Merch</a>
+        <a href="/press/">Press</a>
+      </nav>
+
+      <header class="hero">
+        <div class="eyebrow">Music / Transmissions</div>
+        <h1>Hollow Drift</h1>
+        <div class="tag">Hear the signal.</div>
+        <div class="pitch">
+          Industrial groove metal, glitch interference, mechanical rhythm, deep low-end,
+          and signal-driven world-building. This is the dedicated home for Hollow Drift music.
+        </div>
+      </header>
+
+      <section class="grid">
+        <div class="panel full">
+          <div class="panelTitle">The First Transmission</div>
+          <p>
+            Hear the set before the room receives it. The tracked listening link below opens
+            The First Transmission playlist through Hollow Drift's GO redirect.
+          </p>
+
+          <div class="links">
+            <a class="btn primary" href="/go/first-transmission/" target="_blank" rel="noopener">
+              <div>
+                <strong>Open The First Transmission</strong>
+                <span>SoundCloud playlist • tracked link</span>
+              </div>
+              <div class="arrow">→</div>
+            </a>
+
+            <a class="btn" href="/tickets/">
+              <div>
+                <strong>See It Live</strong>
+                <span>August 27 • The Industrial</span>
+              </div>
+              <div class="arrow">→</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="panel full">
+          <div class="panelTitle">Latest Transmission</div>
+          <div class="embed">
+            <iframe
+              src="https://www.youtube.com/embed/kP7krVNn20A"
+              title="Hollow Drift Latest Transmission"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panelTitle">YouTube</div>
+          <p>Videos, lyric videos, Shorts, and visual transmissions.</p>
+          <div style="margin-top:16px;">
+            <a class="btn" href="https://youtube.com/@hollowdriftmusic" target="_blank" rel="noopener">
+              <div>
+                <strong>Open YouTube</strong>
+                <span>@hollowdriftmusic</span>
+              </div>
+              <div class="arrow">→</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panelTitle">YouTube Music</div>
+          <p>Official music and releases on YouTube Music.</p>
+          <div style="margin-top:16px;">
+            <a class="btn" href="https://music.youtube.com/channel/UCQU1jAo46TjSwccGveV6uEw" target="_blank" rel="noopener">
+              <div>
+                <strong>Open YouTube Music</strong>
+                <span>official releases</span>
+              </div>
+              <div class="arrow">→</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="panel full">
+          <div class="panelTitle">More Signal</div>
+          <div class="links">
+            <a class="btn" href="https://suno.com/@hollowdrift" target="_blank" rel="noopener">
+              <div>
+                <strong>Suno</strong>
+                <span>exclusive drops</span>
+              </div>
+              <div class="arrow">→</div>
+            </a>
+
+            <a class="btn" href="https://www.reverbnation.com/artist/hollowdrift" target="_blank" rel="noopener">
+              <div>
+                <strong>ReverbNation</strong>
+                <span>artist profile & events</span>
+              </div>
+              <div class="arrow">→</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div>© <span id="year"></span> Hollow Drift</div>
+        <div class="motto">Transmit Something Real.</div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
