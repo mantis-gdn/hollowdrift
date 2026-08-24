@@ -5,36 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Tickets — Hollow Drift: The First Transmission</title>
-
-  <meta
-    name="description"
-    content="Tickets for Hollow Drift Presents The First Transmission — August 27, 2026 at The Industrial in Pawtucket, Rhode Island."
-  >
-
+  <meta name="description" content="Tickets for Hollow Drift Presents The First Transmission — August 27, 2026 at The Industrial in Pawtucket, Rhode Island.">
   <meta name="theme-color" content="#07070a">
 
   <meta property="og:title" content="Hollow Drift — The First Transmission">
-  <meta
-    property="og:description"
-    content="August 27, 2026 • The Industrial • Pawtucket, RI • $10 • All Ages"
-  >
+  <meta property="og:description" content="August 27, 2026 • The Industrial • Pawtucket, RI • $10 • All Ages">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hollowdrift.com/tickets/">
-  <meta
-    property="og:image"
-    content="https://hollowdrift.com/public/hollow-drift-facebook-preview-safe-1200x630.png"
-  >
+  <meta property="og:image" content="https://hollowdrift.com/public/hollow-drift-facebook-preview-safe-1200x630.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hollow Drift — The First Transmission Tickets">
-  <meta
-    name="twitter:description"
-    content="August 27, 2026 • The Industrial • Pawtucket, RI • $10 • All Ages"
-  >
-  <meta
-    name="twitter:image"
-    content="https://hollowdrift.com/public/hollow-drift-facebook-preview-safe-1200x630.png"
-  >
+  <meta name="twitter:description" content="August 27, 2026 • The Industrial • Pawtucket, RI • $10 • All Ages">
+  <meta name="twitter:image" content="https://hollowdrift.com/public/hollow-drift-facebook-preview-safe-1200x630.png">
 
   <style>
     :root {
@@ -65,33 +48,19 @@
       padding:34px 18px 64px;
     }
 
-    .wrap{
-      width:100%;
-      max-width:var(--max);
-      margin:0 auto;
-    }
+    .wrap{ width:100%; max-width:var(--max); margin:0 auto; }
 
     .card{
       width:100%;
       border:1px solid var(--line);
       border-radius:var(--radius);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.025)),
-        var(--card);
+      background:linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.025)),var(--card);
       box-shadow:0 24px 90px rgba(0,0,0,.75);
       overflow:hidden;
     }
 
-    .banner{
-      background:#000;
-      border-bottom:1px solid var(--line);
-    }
-
-    .banner img{
-      display:block;
-      width:100%;
-      height:auto;
-    }
+    .banner{ background:#000; border-bottom:1px solid var(--line); }
+    .banner img{ display:block; width:100%; height:auto; }
 
     .siteNav{
       display:flex;
@@ -102,19 +71,15 @@
       background:rgba(0,0,0,.35);
     }
 
-    .siteNav a,
-    .siteNav .active{
+    .siteNav a{
+      color:var(--muted);
+      text-decoration:none;
       font-family:var(--mono);
       font-size:13px;
       letter-spacing:.08em;
       text-transform:uppercase;
       padding:8px 10px;
       border-radius:999px;
-    }
-
-    .siteNav a{
-      color:var(--muted);
-      text-decoration:none;
       border:1px solid transparent;
     }
 
@@ -124,17 +89,13 @@
       background:rgba(247,201,72,.05);
     }
 
-    .siteNav .active{
+    .siteNav .sectionActive{
       color:var(--gold);
-      border:1px solid rgba(247,201,72,.55);
+      border-color:rgba(247,201,72,.55);
       background:rgba(247,201,72,.08);
-      cursor:default;
     }
 
-    .content{
-      padding:42px 32px 38px;
-      text-align:center;
-    }
+    .content{ padding:42px 32px 38px; text-align:center; }
 
     .eyebrow{
       color:var(--gold);
@@ -152,12 +113,7 @@
       letter-spacing:-2px;
     }
 
-    .signal{
-      margin-top:14px;
-      color:var(--gold);
-      font-family:var(--mono);
-      font-size:20px;
-    }
+    .signal{ margin-top:14px; color:var(--gold); font-family:var(--mono); font-size:20px; }
 
     .details{
       margin:30px auto 0;
@@ -172,18 +128,8 @@
     }
 
     .details strong{ color:var(--gold); }
-
-    .price{
-      margin-top:22px;
-      font-size:34px;
-      font-weight:800;
-    }
-
-    .ages{
-      margin-top:5px;
-      color:var(--muted);
-      font-family:var(--mono);
-    }
+    .price{ margin-top:22px; font-size:34px; font-weight:800; }
+    .ages{ margin-top:5px; color:var(--muted); font-family:var(--mono); }
 
     .ticketButton{
       display:flex;
@@ -197,8 +143,7 @@
       padding:20px 26px;
       border-radius:16px;
       border:1px solid rgba(247,201,72,.75);
-      background:
-        linear-gradient(135deg, rgba(247,201,72,.20), rgba(247,201,72,.05));
+      background:linear-gradient(135deg, rgba(247,201,72,.20), rgba(247,201,72,.05));
       color:var(--text);
       text-decoration:none;
       font-size:26px;
@@ -208,20 +153,51 @@
 
     .ticketButton:hover{
       transform:translateY(-2px);
-      background:
-        linear-gradient(135deg, rgba(247,201,72,.30), rgba(247,201,72,.08));
+      background:linear-gradient(135deg, rgba(247,201,72,.30), rgba(247,201,72,.08));
     }
 
-    .arrow{
-      color:var(--gold);
-      font-size:34px;
-    }
+    .arrow{ color:var(--gold); font-size:34px; }
 
     .secure{
       margin-top:12px;
       color:var(--muted);
       font-family:var(--mono);
       font-size:12px;
+    }
+
+    .liveContainer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      width:100%;
+      max-width:620px;
+      margin:28px auto 0;
+      padding:20px 22px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.035);
+      color:var(--text);
+      text-align:left;
+      text-decoration:none;
+      transition:.15s ease;
+    }
+
+    .liveContainer:hover{
+      transform:translateY(-2px);
+      border-color:rgba(247,201,72,.65);
+      background:rgba(255,255,255,.06);
+    }
+
+    .liveContainer strong{ display:block; font-size:20px; }
+
+    .liveContainer span{
+      display:block;
+      margin-top:5px;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+      line-height:1.5;
     }
 
     .back{
@@ -235,8 +211,29 @@
 
     .back:hover{ color:var(--gold); }
 
+    footer{
+      padding:20px 28px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+    }
+
+    .footerNav{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px 18px;
+      font-family:var(--mono);
+      font-size:12px;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+    }
+
+    .footerNav a{ color:var(--muted); text-decoration:none; }
+    .footerNav a:hover{ color:var(--gold); }
+
     .motto{
-      padding:18px 24px;
+      margin-top:18px;
+      padding-top:18px;
       border-top:1px solid var(--line);
       color:var(--gold);
       font-family:var(--mono);
@@ -261,8 +258,7 @@
 
       .siteNav::-webkit-scrollbar{ display:none; }
 
-      .siteNav a,
-      .siteNav .active{
+      .siteNav a{
         flex:0 0 auto;
         font-size:10.5px;
         letter-spacing:.025em;
@@ -271,25 +267,22 @@
       }
 
       .ticketButton{ font-size:22px; }
+      .liveContainer strong{ font-size:18px; }
     }
   </style>
 </head>
 
 <body>
-
   <main class="wrap">
     <div class="card">
 
       <div class="banner">
-        <img
-          src="/public/hollow-drift-secondary-banner-2008x200.png"
-          alt="Hollow Drift Industrial Metal Banner"
-        >
+        <img src="/public/hollow-drift-secondary-banner-2008x200.png" alt="Hollow Drift Industrial Metal Banner">
       </div>
 
       <nav class="siteNav" aria-label="Tickets page navigation">
         <a href="/">Home</a>
-        <span class="active" aria-current="page">Tickets</span>
+        <a class="sectionActive" href="/live/">Live</a>
         <a href="/music/">Music</a>
         <a href="/merch/">Merch</a>
         <a href="/connect/">Connect</a>
@@ -297,11 +290,8 @@
       </nav>
 
       <section class="content">
-
         <div class="eyebrow">Hollow Drift Presents</div>
-
         <h1>The First<br>Transmission</h1>
-
         <div class="signal">I Am the Signal.</div>
 
         <div class="details">
@@ -314,7 +304,6 @@
         </div>
 
         <div class="price">$10</div>
-
         <div class="ages">GENERAL ADMISSION • ALL AGES</div>
 
         <a
@@ -327,15 +316,32 @@
           <span class="arrow">→</span>
         </a>
 
-        <div class="secure">
-          Ticket purchase opens securely through Eventbrite.
-        </div>
+        <div class="secure">Ticket purchase opens securely through Eventbrite.</div>
+
+        <a class="liveContainer" href="/live/">
+          <div>
+            <strong>Explore Hollow Drift Live</strong>
+            <span>Full show information • future transmissions • past-show archive</span>
+          </div>
+          <span class="arrow">→</span>
+        </a>
 
         <a class="back" href="/">← Return to HollowDrift.com</a>
-
       </section>
 
-      <div class="motto">BUILT FOR THE ROOM. NOT THE RECORDING.</div>
+      <footer>
+        <nav class="footerNav" aria-label="Footer navigation">
+          <a href="/">Home</a>
+          <a href="/live/">Live</a>
+          <a href="/tickets/">Tickets</a>
+          <a href="/music/">Music</a>
+          <a href="/merch/">Merch</a>
+          <a href="/connect/">Connect</a>
+          <a href="/press/">Press</a>
+        </nav>
+
+        <div class="motto">BUILT FOR THE ROOM. NOT THE RECORDING.</div>
+      </footer>
 
     </div>
   </main>
@@ -347,6 +353,5 @@
     data-cf-beacon='{"token":"3454a87f86b94c099e6b988c87b2df5c"}'>
   </script>
   <!-- End Cloudflare Web Analytics -->
-
 </body>
 </html>
