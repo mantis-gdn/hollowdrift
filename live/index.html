@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Live — Hollow Drift</title>
+  <meta name="description" content="Upcoming and past Hollow Drift live transmissions, including The First Transmission on August 27, 2026 at The Industrial in Pawtucket, Rhode Island.">
+  <meta name="theme-color" content="#07070a">
+
+  <meta property="og:title" content="Hollow Drift — Live Transmissions">
+  <meta property="og:description" content="The First Transmission • August 27, 2026 • The Industrial • Pawtucket, RI • $10 • All Ages">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hollowdrift.com/live/">
+  <meta property="og:site_name" content="Hollow Drift">
+  <meta property="og:image" content="https://hollowdrift.com/public/hollow-drift-facebook-preview-safe-1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hollow Drift — Live Transmissions">
+  <meta name="twitter:description" content="Upcoming and past Hollow Drift live broadcasts from Pawtucket, Rhode Island.">
+  <meta name="twitter:image" content="https://hollowdrift.com/public/hollow-drift-facebook-preview-safe-1200x630.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicEvent",
+    "name": "Hollow Drift Presents The First Transmission",
+    "description": "Hollow Drift's first live industrial groove metal broadcast.",
+    "startDate": "2026-08-27T19:00:00-04:00",
+    "doorTime": "2026-08-27T18:00:00-04:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "The Industrial",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "173 Coyle Avenue",
+        "addressLocality": "Pawtucket",
+        "addressRegion": "RI",
+        "postalCode": "02861",
+        "addressCountry": "US"
+      }
+    },
+    "image": "https://hollowdrift.com/public/hollow-drift-first-transmission-flyer.png",
+    "performer": {
+      "@type": "MusicGroup",
+      "name": "Hollow Drift",
+      "url": "https://hollowdrift.com/"
+    },
+    "organizer": {
+      "@type": "MusicGroup",
+      "name": "Hollow Drift",
+      "url": "https://hollowdrift.com/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://hollowdrift.com/tickets/",
+      "price": "10",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2026-01-01T00:00:00-05:00"
+    },
+    "isAccessibleForFree": false,
+    "typicalAgeRange": "All Ages"
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#050507;
+      --card:rgba(10,10,14,.92);
+      --text:#f4f4f6;
+      --muted:rgba(244,244,246,.72);
+      --line:rgba(255,255,255,.15);
+      --gold:#f7c948;
+      --purple:#7b3cff;
+      --radius:22px;
+      --max:1120px;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Courier New",monospace;
+      --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      color:var(--text);
+      font-family:var(--sans);
+      background:
+        radial-gradient(900px 520px at 12% 88%, rgba(247,201,72,.16), transparent 58%),
+        radial-gradient(900px 600px at 88% 25%, rgba(123,60,255,.24), transparent 55%),
+        radial-gradient(600px 500px at 50% 105%, rgba(0,255,200,.06), transparent 60%),
+        #030305;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.18;
+      mix-blend-mode:screen;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:34px 18px 64px;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      backdrop-filter:blur(10px);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.025)),
+        var(--card);
+      box-shadow:0 24px 90px rgba(0,0,0,.72);
+    }
+
+    .heroBanner{
+      width:100%;
+      background:#000;
+      border-bottom:1px solid var(--line);
+    }
+
+    .heroBanner img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+
+    .siteNav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:14px 34px;
+      border-bottom:1px solid var(--line);
+      background:rgba(0,0,0,.35);
+    }
+
+    .siteNav a,
+    .siteNav .active{
+      color:var(--muted);
+      text-decoration:none;
+      font-family:var(--mono);
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+
+    .siteNav a:hover{
+      color:var(--gold);
+      border-color:rgba(247,201,72,.35);
+      background:rgba(247,201,72,.05);
+    }
+
+    .siteNav .active{
+      color:var(--gold);
+      border-color:rgba(247,201,72,.55);
+      background:rgba(247,201,72,.08);
+      cursor:default;
+    }
+
+    .liveHero{
+      position:relative;
+      padding:54px 34px 46px;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .liveHero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(135deg, rgba(0,0,0,.90), rgba(0,0,0,.64)),
+        radial-gradient(circle at center, rgba(123,60,255,.30), transparent 62%),
+        url("/public/hollow-drift-sigil.png");
+      background-size:auto, auto, 680px;
+      background-position:center;
+      background-repeat:no-repeat;
+      opacity:.34;
+      filter:blur(2px) saturate(1.2);
+      transform:scale(1.08);
+      z-index:-1;
+    }
+
+    .eyebrow,
+    .sectionTitle,
+    .eventMeta,
+    .status,
+    .footerNav{
+      font-family:var(--mono);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+
+    .eyebrow{
+      color:var(--gold);
+      font-size:15px;
+      margin-bottom:12px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(48px,8vw,86px);
+      line-height:.92;
+      letter-spacing:-2px;
+    }
+
+    .intro{
+      max-width:760px;
+      margin:20px 0 0;
+      color:var(--muted);
+      font-size:21px;
+      line-height:1.55;
+    }
+
+    .section{
+      padding:34px;
+      border-top:1px solid var(--line);
+    }
+
+    .sectionTitle{
+      color:var(--gold);
+      font-size:14px;
+      margin-bottom:18px;
+    }
+
+    .eventCard{
+      display:grid;
+      grid-template-columns:minmax(260px, 390px) 1fr;
+      gap:32px;
+      padding:26px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.035);
+    }
+
+    .poster{
+      display:block;
+      width:100%;
+      border-radius:14px;
+      border:1px solid rgba(247,201,72,.48);
+      background:#000;
+    }
+
+    .status{
+      display:inline-block;
+      margin-bottom:14px;
+      padding:7px 10px;
+      border:1px solid rgba(247,201,72,.55);
+      border-radius:999px;
+      color:var(--gold);
+      background:rgba(247,201,72,.08);
+      font-size:12px;
+    }
+
+    .eventCard h2{
+      margin:0;
+      font-size:clamp(38px,6vw,64px);
+      line-height:.94;
+      letter-spacing:-1.5px;
+    }
+
+    .signal{
+      margin-top:13px;
+      color:var(--gold);
+      font-family:var(--mono);
+      font-size:19px;
+    }
+
+    .eventMeta{
+      margin-top:22px;
+      color:var(--text);
+      font-size:14px;
+      line-height:1.8;
+      letter-spacing:.04em;
+    }
+
+    .eventMeta strong{ color:var(--gold); }
+
+    .eventCopy{
+      margin-top:20px;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.65;
+    }
+
+    .actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .btn{
+      min-height:70px;
+      padding:17px 20px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.045);
+      color:var(--text);
+      text-decoration:none;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      transition:.15s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.075);
+      border-color:rgba(247,201,72,.65);
+    }
+
+    .btn.primary{
+      border-color:rgba(247,201,72,.72);
+      background:linear-gradient(135deg, rgba(247,201,72,.20), rgba(247,201,72,.05));
+    }
+
+    .btn strong{
+      display:block;
+      font-size:18px;
+      line-height:1.15;
+    }
+
+    .btn span{
+      display:block;
+      margin-top:5px;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+    }
+
+    .arrow{
+      color:var(--gold);
+      font-size:28px;
+      line-height:1;
+    }
+
+    .expectGrid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .expectItem{
+      padding:15px 17px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .expectItem::before{
+      content:"◆";
+      color:var(--gold);
+      margin-right:9px;
+    }
+
+    .archiveGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .archivePanel{
+      min-height:180px;
+      padding:22px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.03);
+    }
+
+    .archivePanel h2{
+      margin:0 0 10px;
+      font-size:26px;
+    }
+
+    .archivePanel p{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.65;
+    }
+
+    .standby{
+      display:inline-block;
+      margin-top:18px;
+      color:var(--gold);
+      font-family:var(--mono);
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    footer{
+      padding:24px 34px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+    }
+
+    .footerNav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      margin-bottom:18px;
+      font-size:12px;
+      letter-spacing:.07em;
+    }
+
+    .footerNav a{
+      color:var(--muted);
+      text-decoration:none;
+    }
+
+    .footerNav a:hover,
+    footer a{ color:var(--gold); }
+
+    .footerBottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .motto{
+      color:var(--gold);
+      font-family:var(--mono);
+    }
+
+    @media (max-width:760px){
+      .wrap{ padding:12px 10px 40px; }
+
+      .siteNav{
+        padding:10px;
+        gap:4px;
+        flex-wrap:nowrap;
+        justify-content:space-between;
+        overflow-x:auto;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+      }
+
+      .siteNav::-webkit-scrollbar{ display:none; }
+
+      .siteNav a,
+      .siteNav .active{
+        flex:0 0 auto;
+        font-size:10.5px;
+        letter-spacing:.025em;
+        padding:7px 5px;
+        white-space:nowrap;
+      }
+
+      .liveHero{ padding:38px 22px 34px; }
+      .intro{ font-size:18px; }
+      .section{ padding:26px 20px; }
+      .eventCard{ grid-template-columns:1fr; padding:18px; }
+      .poster{ max-width:440px; margin:0 auto; }
+      .actions,
+      .expectGrid,
+      .archiveGrid{ grid-template-columns:1fr; }
+      .footerNav{ gap:12px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <div class="card">
+
+      <div class="heroBanner">
+        <img src="/public/hollow-drift-secondary-banner-2008x200.png" alt="Hollow Drift Industrial Metal Banner">
+      </div>
+
+      <nav class="siteNav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <span class="active" aria-current="page">Live</span>
+        <a href="/music/">Music</a>
+        <a href="/merch/">Merch</a>
+        <a href="/connect/">Connect</a>
+        <a href="/press/">Press</a>
+      </nav>
+
+      <header class="liveHero">
+        <div class="eyebrow">Hollow Drift Live</div>
+        <h1>Transmission<br>Archive</h1>
+        <p class="intro">
+          Upcoming broadcasts, future signals, and the permanent record of every Hollow Drift performance.
+          The room changes. The transmission remains.
+        </p>
+      </header>
+
+      <section class="section" aria-labelledby="upcoming-title">
+        <div class="sectionTitle" id="upcoming-title">Upcoming Transmission</div>
+
+        <article class="eventCard">
+          <div>
+            <img
+              class="poster"
+              src="/public/hollow-drift-first-transmission-flyer.png"
+              alt="Hollow Drift Presents The First Transmission event flyer"
+            >
+          </div>
+
+          <div>
+            <div class="status">Transmission Scheduled</div>
+            <h2>The First<br>Transmission</h2>
+            <div class="signal">I Am the Signal.</div>
+
+            <div class="eventMeta">
+              <strong>August 27, 2026</strong><br>
+              The Industrial<br>
+              173 Coyle Avenue<br>
+              Pawtucket, Rhode Island 02861<br><br>
+              Doors: 6:00 PM • Show: 7:00 PM<br>
+              $10 General Admission • All Ages
+            </div>
+
+            <p class="eventCopy">
+              The First Transmission is the first live Hollow Drift broadcast. The songs, sermons,
+              glitches, and signals leave the headphones and enter the room. This is where the signal becomes real.
+            </p>
+
+            <div class="actions">
+              <a class="btn primary" href="/tickets/">
+                <div>
+                  <strong>Get Tickets</strong>
+                  <span>$10 • all ages</span>
+                </div>
+                <div class="arrow">→</div>
+              </a>
+
+              <a class="btn" href="/go/first-transmission/" target="_blank" rel="noopener">
+                <div>
+                  <strong>Learn the Songs</strong>
+                  <span>open the playlist</span>
+                </div>
+                <div class="arrow">→</div>
+              </a>
+            </div>
+
+            <div class="expectGrid" aria-label="What to expect">
+              <div class="expectItem">Industrial groove metal</div>
+              <div class="expectItem">Signal Preacher transmissions</div>
+              <div class="expectItem">Glitch-heavy broadcast energy</div>
+              <div class="expectItem">Exclusive event merchandise</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" aria-labelledby="archive-title">
+        <div class="sectionTitle" id="archive-title">The Continuing Broadcast</div>
+
+        <div class="archiveGrid">
+          <div class="archivePanel">
+            <h2>Future Transmissions</h2>
+            <p>
+              New Hollow Drift performances will appear here as soon as the next signal is confirmed.
+            </p>
+            <div class="standby">Stand by for transmission</div>
+          </div>
+
+          <div class="archivePanel">
+            <h2>Past Transmissions</h2>
+            <p>
+              Completed shows will live here with photographs, video, set information, press coverage,
+              and the story of what happened in the room.
+            </p>
+            <div class="standby">Archive awaiting first entry</div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <nav class="footerNav" aria-label="Footer navigation">
+          <a href="/">Home</a>
+          <a href="/live/">Live</a>
+          <a href="/tickets/">Tickets</a>
+          <a href="/music/">Music</a>
+          <a href="/merch/">Merch</a>
+          <a href="/connect/">Connect</a>
+          <a href="/press/">Press</a>
+        </nav>
+
+        <div class="footerBottom">
+          <div>© <span id="year"></span> Hollow Drift</div>
+          <div class="motto">Built for the room. Not the recording.</div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script
+    type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token":"3454a87f86b94c099e6b988c87b2df5c"}'>
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
