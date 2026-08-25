@@ -60,6 +60,26 @@
     .btn span{display:block;margin-top:4px;color:var(--muted);font-family:var(--mono);font-size:12px}
     .arrow{color:var(--gold);font-size:28px;line-height:1;flex:0 0 auto}
     .links{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+    .trackGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .track{
+      position:relative;overflow:hidden;min-height:235px;padding:22px;
+      border:1px solid var(--line);border-radius:16px;
+      background:linear-gradient(145deg,rgba(123,60,255,.17),rgba(0,0,0,.48));
+      display:flex;flex-direction:column;justify-content:space-between;isolation:isolate;
+    }
+    .track::before{
+      content:"";position:absolute;inset:auto -50px -75px auto;width:210px;height:210px;
+      border-radius:50%;background:radial-gradient(circle,rgba(123,60,255,.42),transparent 68%);
+      filter:blur(3px);z-index:-1;
+    }
+    .track:nth-child(even)::before{background:radial-gradient(circle,rgba(247,201,72,.26),transparent 68%)}
+    .trackNumber{color:var(--gold);font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+    .track h2{margin:10px 0 8px;font-size:clamp(26px,4vw,38px);line-height:.96;letter-spacing:-1px}
+    .trackStyle{color:var(--gold);font-family:var(--mono);font-size:12px;line-height:1.45;text-transform:uppercase;letter-spacing:.06em}
+    .track p{margin:15px 0 20px;max-width:390px;font-size:15px;line-height:1.55}
+    .trackLink{color:var(--text);font-family:var(--mono);font-size:13px;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:.07em}
+    .trackLink:hover{color:var(--gold)}
+    .catalogOutro{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
     .embed{width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;border:1px solid var(--line)}
     .embed iframe{width:100%;height:100%;border:0}
     footer{padding:20px 28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:14px}
@@ -88,6 +108,7 @@
       .grid{grid-template-columns:1fr;padding:0 20px 24px}
       .panel.full{grid-column:auto}
       .links{grid-template-columns:1fr}
+      .trackGrid{grid-template-columns:1fr}
       .hero{padding:28px 20px}
       h1{font-size:52px}
     }
@@ -140,6 +161,61 @@
               <div>
                 <strong>See It Live</strong>
                 <span>August 27 • The Industrial</span>
+              </div>
+              <div class="arrow">→</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="panel full">
+          <div class="panelTitle">Featured Transmissions</div>
+          <div class="trackGrid">
+            <article class="track">
+              <div>
+                <div class="trackNumber">Transmission 01</div>
+                <h2>I AM THE SIGNAL</h2>
+                <div class="trackStyle">Industrial Groove Metal / Signal Anthem</div>
+                <p>The Hollow Drift declaration: the voice does not wait for permission, a platform, or a clear channel to transmit.</p>
+              </div>
+              <a class="trackLink" href="https://on.soundcloud.com/uB5wMk45Zrz1x3" target="_blank" rel="noopener">Receive transmission →</a>
+            </article>
+
+            <article class="track">
+              <div>
+                <div class="trackNumber">Transmission 02</div>
+                <h2>BANDWIDTH</h2>
+                <div class="trackStyle">Dubstep Metal / System Overload</div>
+                <p>Metal is the machinery. Dubstep is the overload. Two massive forces fight for control of the same frequency.</p>
+              </div>
+              <a class="trackLink" href="https://on.soundcloud.com/rn9QXTo44jFuj7uyfj" target="_blank" rel="noopener">Receive transmission →</a>
+            </article>
+
+            <article class="track">
+              <div>
+                <div class="trackNumber">Transmission 03</div>
+                <h2>EMBER</h2>
+                <div class="trackStyle">Industrial Metal / Blue-Fire Transmission</div>
+                <p>The fire came first. The signal came after. Now the signal carries the fire through every damaged relay.</p>
+              </div>
+              <a class="trackLink" href="https://on.soundcloud.com/CTId6antb3CV4FM28Q" target="_blank" rel="noopener">Receive transmission →</a>
+            </article>
+
+            <article class="track">
+              <div>
+                <div class="trackNumber">Transmission 04</div>
+                <h2>SEVEN YEAR BEACON</h2>
+                <div class="trackStyle">Industrial Groove Metal / Long-Range Signal</div>
+                <p>A transmission built from endurance: the beacon remains lit long after the surrounding machinery expects it to fail.</p>
+              </div>
+              <a class="trackLink" href="https://on.soundcloud.com/n6WKCqkPPKIQRmbg3A" target="_blank" rel="noopener">Receive transmission →</a>
+            </article>
+          </div>
+
+          <div class="catalogOutro">
+            <a class="btn primary" href="/go/playlist/" target="_blank" rel="noopener">
+              <div>
+                <strong>Explore the Full Catalog</strong>
+                <span>more Hollow Drift transmissions on SoundCloud</span>
               </div>
               <div class="arrow">→</div>
             </a>
