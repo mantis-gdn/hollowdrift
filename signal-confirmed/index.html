@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Signal Confirmed — Hollow Drift</title>
+  <meta name="description" content="Your connection to the Hollow Drift Signal Log is confirmed.">
+  <meta name="theme-color" content="#07070a">
+  <meta name="robots" content="noindex,follow">
+
+  <style>
+    :root{
+      --bg:#050507;
+      --card:rgba(10,10,14,.92);
+      --text:#f4f4f6;
+      --muted:rgba(244,244,246,.72);
+      --line:rgba(255,255,255,.15);
+      --gold:#f7c948;
+      --purple:#7b3cff;
+      --radius:22px;
+      --max:1120px;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Courier New",monospace;
+      --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      color:var(--text);
+      font-family:var(--sans);
+      background:
+        radial-gradient(900px 520px at 12% 88%, rgba(247,201,72,.16), transparent 58%),
+        radial-gradient(900px 600px at 88% 25%, rgba(123,60,255,.24), transparent 55%),
+        radial-gradient(600px 500px at 50% 105%, rgba(0,255,200,.06), transparent 60%),
+        #030305;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.18;
+      mix-blend-mode:screen;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:34px 18px 64px;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      backdrop-filter:blur(10px);
+      background:linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.025)),var(--card);
+      box-shadow:0 24px 90px rgba(0,0,0,.72);
+    }
+
+    .heroBanner{ width:100%; background:#000; border-bottom:1px solid var(--line); }
+    .heroBanner img{ display:block; width:100%; height:auto; }
+
+    .siteNav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:14px 34px;
+      border-bottom:1px solid var(--line);
+      background:rgba(0,0,0,.35);
+    }
+
+    .siteNav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-family:var(--mono);
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+
+    .siteNav a:hover{
+      color:var(--gold);
+      border-color:rgba(247,201,72,.35);
+      background:rgba(247,201,72,.05);
+    }
+
+    .confirmation{
+      position:relative;
+      isolation:isolate;
+      min-height:610px;
+      padding:72px 34px;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      overflow:hidden;
+    }
+
+    .confirmation::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.86)),
+        radial-gradient(circle at center, rgba(123,60,255,.34), transparent 58%),
+        url("/public/hollow-drift-sigil.png") center/720px no-repeat;
+      opacity:.48;
+      filter:blur(1px) saturate(1.2);
+      transform:scale(1.06);
+    }
+
+    .confirmation::after{
+      content:"";
+      position:absolute;
+      z-index:-1;
+      width:min(650px,88%);
+      height:min(650px,88%);
+      border:1px solid rgba(247,201,72,.18);
+      border-radius:50%;
+      box-shadow:0 0 90px rgba(123,60,255,.18),inset 0 0 80px rgba(247,201,72,.04);
+    }
+
+    .signalPanel{ max-width:760px; }
+
+    .statusMark{
+      width:86px;
+      height:86px;
+      margin:0 auto 26px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(247,201,72,.72);
+      border-radius:50%;
+      color:var(--gold);
+      background:rgba(247,201,72,.08);
+      box-shadow:0 0 42px rgba(247,201,72,.18);
+      font-size:44px;
+      line-height:1;
+    }
+
+    .eyebrow{
+      color:var(--gold);
+      font-family:var(--mono);
+      font-size:15px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(48px,8vw,82px);
+      line-height:.92;
+      letter-spacing:-2px;
+    }
+
+    .message{
+      max-width:680px;
+      margin:24px auto 0;
+      color:var(--muted);
+      font-size:clamp(18px,2.6vw,22px);
+      line-height:1.55;
+    }
+
+    .statusLine{
+      margin-top:22px;
+      color:var(--gold);
+      font-family:var(--mono);
+      font-size:14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      width:min(720px,100%);
+      margin:34px auto 0;
+    }
+
+    .btn{
+      min-height:72px;
+      padding:18px 22px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.045);
+      color:var(--text);
+      text-decoration:none;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      text-align:left;
+      transition:.15s ease;
+    }
+
+    .btn.primary{
+      border-color:rgba(247,201,72,.7);
+      background:linear-gradient(135deg,rgba(247,201,72,.18),rgba(247,201,72,.035));
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.075);
+      border-color:rgba(247,201,72,.65);
+    }
+
+    .btn strong{ display:block; font-size:20px; line-height:1.1; }
+    .btn span{ display:block; margin-top:6px; color:var(--muted); font-family:var(--mono); font-size:13px; }
+    .arrow{ color:var(--gold); font-size:28px; line-height:1; }
+
+    footer{
+      padding:22px 34px;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:16px;
+      color:var(--muted);
+    }
+
+    footer a{ color:var(--gold); text-decoration:none; }
+
+    .footerNav{
+      flex:0 0 100%;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      padding-bottom:16px;
+      border-bottom:1px solid var(--line);
+      font-family:var(--mono);
+      font-size:12px;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+    }
+
+    .footerNav a{ color:var(--muted); }
+    .footerNav a:hover{ color:var(--gold); }
+    footer .motto{ color:var(--gold); font-family:var(--mono); }
+
+    @media (max-width:760px){
+      .wrap{ padding:18px 10px 40px; }
+      .siteNav{ padding:10px; gap:4px; flex-wrap:nowrap; justify-content:space-between; overflow-x:auto; scrollbar-width:none; }
+      .siteNav::-webkit-scrollbar{ display:none; }
+      .siteNav a{ flex:0 0 auto; font-size:11px; letter-spacing:.045em; padding:7px 6px; white-space:nowrap; }
+      .confirmation{ min-height:590px; padding:58px 20px; }
+      .confirmation::before{ background-size:auto,auto,440px; }
+      h1{ font-size:52px; }
+      .actions{ grid-template-columns:1fr; }
+      footer{ padding:22px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <div class="card">
+      <div class="heroBanner">
+        <img src="/public/hollow-drift-secondary-banner-2008x200.png" alt="Hollow Drift Industrial Metal Banner">
+      </div>
+
+      <nav class="siteNav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/live/">Live</a>
+        <a href="/music/">Music</a>
+        <a href="/merch/">Merch</a>
+        <a href="/connect/">Connect</a>
+        <a href="/press/">Press</a>
+      </nav>
+
+      <section class="confirmation" aria-labelledby="confirmation-title">
+        <div class="signalPanel">
+          <div class="statusMark" aria-hidden="true">✓</div>
+          <div class="eyebrow">Connection Confirmed</div>
+          <h1 id="confirmation-title">The Signal Is Live.</h1>
+
+          <p class="message">
+            Your connection to the Hollow Drift Signal Log is confirmed.
+            New releases, show announcements, and transmission updates will now reach your inbox.
+          </p>
+
+          <div class="statusLine">Receiver verified • Transmission authorized</div>
+
+          <div class="actions">
+            <a class="btn primary" href="/">
+              <div>
+                <strong>Enter Hollow Drift</strong>
+                <span>return to the main transmission</span>
+              </div>
+              <div class="arrow">→</div>
+            </a>
+
+            <a class="btn" href="/music/">
+              <div>
+                <strong>Explore The Music</strong>
+                <span>tracks, playlists & transmissions</span>
+              </div>
+              <div class="arrow">→</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <nav class="footerNav" aria-label="Footer navigation">
+          <a href="/">Home</a>
+          <a href="/live/">Live</a>
+          <a href="/tickets/">Tickets</a>
+          <a href="/music/">Music</a>
+          <a href="/merch/">Merch</a>
+          <a href="/connect/">Connect</a>
+          <a href="/press/">Press</a>
+        </nav>
+
+        <div>© <span id="year"></span> Hollow Drift</div>
+        <div class="motto">Transmit Something Real.</div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script
+    type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token":"3454a87f86b94c099e6b988c87b2df5c"}'>
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
