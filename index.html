@@ -96,7 +96,6 @@
       height:auto;
     }
 
-
     .siteNav{
       display:flex;
       gap:10px;
@@ -608,8 +607,14 @@
         flex:0 0 auto;
       }
 
-      .pressSpotlight{ margin:0 18px 24px; }
-      .pressSpotlightInner{ grid-template-columns:1fr; }
+      .pressSpotlight{
+        margin:0 18px 24px;
+      }
+
+      .pressSpotlightInner{
+        grid-template-columns:1fr;
+      }
+
       .heroHeader{
         grid-template-columns:1fr;
       }
@@ -698,6 +703,26 @@
 
       </header>
 
+      <section class="mini">
+
+        <div class="miniTitle">
+          Join The Signal Log
+        </div>
+
+        <div class="showInfo">
+          Get show announcements, new releases, and transmission updates directly from Hollow Drift.
+        </div>
+
+        <br>
+
+        <script
+          async
+          data-uid="081ff829b7"
+          src="https://hollowdrift.kit.com/081ff829b7/index.js"
+        ></script>
+
+      </section>
+
       <section class="ctaRow">
 
         <a
@@ -757,30 +782,49 @@
       </section>
 
       <section class="pressSpotlight" aria-label="Press coverage">
+
         <div class="pressSpotlightInner">
+
           <div>
-            <div class="pressKicker">Featured in The Valley Breeze • August 20, 2026</div>
-            <h2>Hollow Drift featured ahead of The First Transmission</h2>
+            <div class="pressKicker">
+              Featured in The Valley Breeze • August 20, 2026
+            </div>
+
+            <h2>
+              Hollow Drift featured ahead of The First Transmission
+            </h2>
+
             <p>
               The Valley Breeze profiles Hollow Drift, the industrial and electronic elements behind the project,
               and the August 27 live broadcast at The Industrial in Pawtucket.
             </p>
-            <a class="btn primary" href="https://www.valleybreeze.com/lifestyle/entertainment/hollow-drift-blends-elements-of-electronic-and-industrial-for-the-first-transmission-at-the-industrial/article_4acc1d10-ddc5-4748-9e6e-ba7c6bcda204.html" target="_blank" rel="noopener">
+
+            <a
+              class="btn primary"
+              href="https://www.valleybreeze.com/lifestyle/entertainment/hollow-drift-blends-elements-of-electronic-and-industrial-for-the-first-transmission-at-the-industrial/article_4acc1d10-ddc5-4748-9e6e-ba7c6bcda204.html"
+              target="_blank"
+              rel="noopener"
+            >
               <div>
                 <strong>Read The Valley Breeze Feature</strong>
                 <span>Press coverage • August 20, 2026</span>
               </div>
+
               <div class="arrow">→</div>
             </a>
           </div>
+
           <a class="btn" href="/press/">
             <div>
               <strong>Press / Media</strong>
               <span>bio, coverage, assets & booking</span>
             </div>
+
             <div class="arrow">→</div>
           </a>
+
         </div>
+
       </section>
 
       <section class="mini">
@@ -794,6 +838,7 @@
         </div>
 
         <div class="countdown">
+
           <div class="countBox">
             <strong id="days">--</strong>
             <span>Days</span>
@@ -813,6 +858,7 @@
             <strong id="seconds">--</strong>
             <span>Seconds</span>
           </div>
+
         </div>
 
       </section>
@@ -891,7 +937,8 @@
 
       </section>
 
-      <section class="mini">
+      <section class="mini" id="merch">
+
         <div class="miniTitle">
           Official Merch
         </div>
@@ -907,12 +954,15 @@
               <strong>Open The Merch Page</strong>
               <span>official Hollow Drift gear</span>
             </div>
+
             <div class="arrow">→</div>
           </a>
         </div>
+
       </section>
 
       <section class="mini">
+
         <div class="miniTitle">
           Connect
         </div>
@@ -928,12 +978,15 @@
               <strong>Connect With Hollow Drift</strong>
               <span>socials • contact • booking</span>
             </div>
+
             <div class="arrow">→</div>
           </a>
         </div>
+
       </section>
 
-<section class="mini">
+      <section class="mini">
+
         <div class="miniTitle">
           Music / Transmissions
         </div>
@@ -949,12 +1002,14 @@
               <strong>Enter The Music Archive</strong>
               <span>latest tracks • playlist • video</span>
             </div>
+
             <div class="arrow">→</div>
           </a>
         </div>
+
       </section>
 
-<section class="mini">
+      <section class="mini">
 
         <div class="miniTitle">
           Find The Venue
@@ -975,26 +1030,6 @@
           referrerpolicy="no-referrer-when-downgrade"
           src="https://www.google.com/maps?q=173%20Coyle%20Avenue%20Pawtucket%20RI%2002861&output=embed">
         </iframe>
-
-      </section>
-
-      <section class="mini">
-
-        <div class="miniTitle">
-          Join The Signal Log
-        </div>
-
-        <div class="showInfo">
-          Get show announcements, new releases, and transmission updates directly from Hollow Drift.
-        </div>
-
-        <br>
-
-        <script
-          async
-          data-uid="081ff829b7"
-          src="https://hollowdrift.kit.com/081ff829b7/index.js"
-        ></script>
 
       </section>
 
@@ -1023,6 +1058,7 @@
       </section>
 
       <footer>
+
         <nav class="footerNav" aria-label="Footer navigation">
           <a href="/">Home</a>
           <a href="/live/">Live</a>
@@ -1040,6 +1076,7 @@
         <div class="motto">
           Built for the room. Not the recording.
         </div>
+
       </footer>
 
     </div>
@@ -1069,15 +1106,30 @@
       const minutes = Math.floor((distance / (1000 * 60)) % 60);
       const seconds = Math.floor((distance / 1000) % 60);
 
-      document.getElementById('days').textContent = String(days).padStart(2,'0');
-      document.getElementById('hours').textContent = String(hours).padStart(2,'0');
-      document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
-      document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');
+      document.getElementById('days').textContent =
+        String(days).padStart(2,'0');
+
+      document.getElementById('hours').textContent =
+        String(hours).padStart(2,'0');
+
+      document.getElementById('minutes').textContent =
+        String(minutes).padStart(2,'0');
+
+      document.getElementById('seconds').textContent =
+        String(seconds).padStart(2,'0');
     }
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
-  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3454a87f86b94c099e6b988c87b2df5c"}'></script><!-- End Cloudflare Web Analytics -->
+
+  <!-- Cloudflare Web Analytics -->
+  <script
+    type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token":"3454a87f86b94c099e6b988c87b2df5c"}'>
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+
 </body>
 </html>
